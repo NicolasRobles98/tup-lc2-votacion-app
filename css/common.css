@@ -189,6 +189,7 @@ h3 {
 #boton-container {
     display: flex;
     justify-content: space-between; 
+    
 }
 
 #contenido-inferior-texto {
