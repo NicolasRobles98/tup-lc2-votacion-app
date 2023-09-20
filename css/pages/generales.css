@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+:root {
+    --magenta: #ee3d8f;
+    --celeste: #37bbed;
+    --morado: #9283be;
+    --gris-claro: #9e9e9e;
+    --titulos: #333;
+    --textos: #333;
+    --fondo-pantalla: rgb(235, 245, 251);
+    --fondo-Cabecera: #18a0fb;
+    --fondo-Footer: #333;
+    --fondo-Menu: #333;
+    --texto-footer: #9e9e9e;
+    --titulo-Grilla: #727272;
+    --borde-inferior-Grilla: #727272;
+    --borde-Grilla: #c5c5c5;
+    --grafica-amarillo: rgb(252, 210, 0);
+    --grafica-amarillo-claro: rgba(252, 210, 0, 0.3);
+    --grafica-celeste: rgb(0, 169, 232);
+    --grafica-celeste-claro: rgba(0, 169, 232, 0.3);
+    --grafica-bordo: rgb(171, 40, 40);
+    --grafica-bordo-claro: rgba(171, 40, 40, 0.3);
+    --grafica-lila: rgb(112, 76, 159);
+    --grafica-lila-claro: rgba(112, 76, 159, 0.5);
+    --grafica-lila2: rgb(77, 46, 110);
+    --grafica-lila2-claro: rgba(77, 46, 110, 0.5);
+    --grafica-gris: rgb(128, 128, 128);
+    --grafica-gris-claro: rgb(128, 128, 128, 0.5);
+    --grafica-verde: rgb(102, 171, 60);
+    --grafica-verde-claro: rgba(102, 171, 60, 0.5);
+    --mensaje-usuario-amarillo: #ffc107;
+    --mensaje-usuario-verde: #28a745;
+    --mensaje-usuario-rojo: #dc3545;
+}
+
+p {
+    font-size: 14px;
+    color: var(--celeste);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1 {
+    font-size: 26px;
+    color: var(--titulos);
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 22px;
+    color: var(--titulos);
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    font-size: 18px;
+    color: var(--titulos);
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-page {
+    padding: 0.5em;
+    background-color: var(--fondo-Cabecera);
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.menu-barra {
+    background-color: var(--fondo-Menu);
+    padding: 20px;
+}
+
+.menu-barra ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu-barra li {
+    margin-right: 20px;
+}
+
+.menu-barra a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.menu-barra a.active {
+    font-weight: bold;
+}
+
+#filtrar {
+    background-color: white;
+    padding: 5px;
+    color: var(--textos);
+    border-radius: 15px;
+    font-size: 10px;
+    font: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#menu-informes {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 5px;
+    color: #fff;
+}
+
+#menu-informes:hover {
+    background-color: var(--gris-claro);
+
+}
+
+#inicio {
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 10px;
+    font: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+#inicio:hover {
+    color: var(--textos);
+}
+
+.lista select {
+    background: transparent;
+    font-size: 14px;
+    height: 30px;
+    border-style: hidden;
+    padding: 5px;
+    color: var(--celeste);
+    font-weight: bold;
+}
+
+.logo {
+    width: 150px;
+}
+
+#boton-informe {
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    margin-right: auto;
+    margin-top: 45px;
+    height: 30px;
+}
+
+#boton-informe:hover {
+    color: var(--textos);
+}
+
+#mesas-escrutadas {
+    background-color: var(--celeste);
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+}
+
+#electores {
+    background-color: var(--magenta);
+    border-radius: 10px;
+    margin: 15px;
+    font-weight: bold;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+}
+
+#participacion {
+    background-color: var(--morado);
+    border-radius: 10px;
+    margin: 15px;
+    font-weight: bold;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+}
+
+#flex-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#recuadros {
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2 2 2 1px, rgba(0 0 0 0.2);
+    display: flex;
+}
+
+#agrup-politicas{
+    overflow-y: scroll;
+    height: 325px;
+}
+
+#recuadros p{
+    color: var(--textos);
+    padding: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+}
+
+#recuadros h2{
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--borde-Grilla);
+}
+
+.progress {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+}
+
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+
+
+
+
+
+#pie-de-pagina {
+    background-color: var(--fondo-Footer);
+    color: var(--texto-footer);
+}
+
+
+#pie-de-pagina {
+    background-color: var(--fondo-Footer);
+    color: var(--texto-footer);
+    padding: 20px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+#pie-de-pagina img {
+    width: 100px;
+}
+
+
+#pie-de-pagina p {
+    margin: 0;
+    text-align: right, justify;
+    color: #727272;
+}
+
+
+#pie-de-pagina a {
+    color: var(--texto-footer);
+    text-decoration: underline;
+}
