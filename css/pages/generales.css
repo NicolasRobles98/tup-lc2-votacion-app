@@ -216,14 +216,25 @@ h3 {
 #recuadros {
     border-radius: 25px;
     border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2 2 2 1px, rgba(0 0 0 0.2);
+    box-shadow: 2px 2px 2px 1px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex: 0 0 0 calc(40% 30px);
 }
 
 #agrup-politicas{
     overflow-y: scroll;
-    height: 325px;
+    border-radius: 10px;
+    margin: 15px;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    border-color: black;
+}
+
+.votos{
+    border-radius: 15%;
+
 }
 
 #recuadros p{
