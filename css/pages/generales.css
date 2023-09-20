@@ -214,27 +214,25 @@ h3 {
 }
 
 #recuadros {
-    border-radius: 25px;
-    border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2px 2px 2px 1px;
     display: flex;
     justify-content: space-around;
     flex: 0 0 0 calc(40% 30px);
+    min-height: 400px;
 }
 
 #agrup-politicas{
     overflow-y: scroll;
-    border-radius: 10px;
-    margin: 15px;
     font-weight: bold;
     padding: 0.5rem 1rem;
     font-size: 12px;
-    border-color: black;
 }
 
 .votos{
-    border-radius: 15%;
-
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2);
+    width: 25%;
+    margin: 0 5px 0 5px;
+    border: 1px var(--borde-Grilla) solid;
 }
 
 #recuadros p{
