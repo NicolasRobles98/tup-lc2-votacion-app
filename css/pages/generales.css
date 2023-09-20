@@ -218,6 +218,7 @@ h3 {
     border: 1px var(--borde-Grilla) solid;
     box-shadow: 2 2 2 1px, rgba(0 0 0 0.2);
     display: flex;
+    justify-content: space-between;
 }
 
 #agrup-politicas{
