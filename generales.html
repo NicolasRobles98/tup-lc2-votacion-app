@@ -36,8 +36,10 @@
     </header>
 
     <main>
-        <h1>Elecciones 2021</h1>
-        <p class="texto-path"> 2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires </p>
+        <div class="contenedor-titulo">
+            <h1>Elecciones 2021</h1>
+            <p class="texto-path"> 2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires </p>
+        </div>
 
         <div id="flex-container">
             <button id="boton-informe">
@@ -234,20 +236,48 @@
 
         <div id="recuadros">
             <div id="agrup-politicas" class="votos">
-                <h1>Agupaciones Políticas</h1>
-                <h2>Juntos por el cambio</h2>
+                <h2>Agupaciones Políticas</h2>
+
+                <h3>Juntos por el cambio</h3>
+                <p>38%</p>
                 <p>30000 VOTOS</p>
-                <div class="progress" style="background: var(--grafica-amarillo-claro);">
-                    <div class="progress-bar" style="width:15%; background: var(--graficaamarillo);">
-                        <span class="progress-bar-text">100%</span>
+                <div class="progress">
+                    <div class="progress-bar">
+                        <span class="progress-bar-text">40%</span>
+                    </div>
+                </div>
+
+                <h3>pj</h3>
+                <p>25%</p>
+                <p>12000 VOTOS</p>
+                <div class="progress2">
+                    <div class="progress-bar2">
+                        <span class="progress-bar-text2">25%</span>
+                    </div>
+                </div>
+
+                <h3>eco + vamos corrientes</h3>
+                <p>38%</p>
+                <p>30000 VOTOS</p>
+                <div class="progress3">
+                    <div class="progress-bar3">
+                        <span class="progress-bar-text3">35%</span>
                     </div>
                 </div>
             </div>
             <div id="provincia" class="votos">
-                <h1>Buenos Aires</h1>
+                <h2>Buenos Aires</h2>
             </div>
             <div class="votos">
-                <h1>Resumen de votos</h1>
+                <h2>Resumen de votos</h2>
+                <div class="bar" style="--bar-value:85%;--bar-color:var(--grafica-amarillo);" data-name="Partido 1"
+                    title="Your Blog 85%"></div>
+                <div class="bar" style="--bar-value:85%;--bar-color:var(--grafica-amarillo);" data-name="Partido 1"
+                    title="Your Blog 85%"></div>
+                <div class="bar" style="--bar-value:85%;--bar-color:var(--grafica-amarillo);" data-name="Partido 1"
+                    title="Your Blog 85%"></div>
+                <div class="bar" style="--bar-value:85%;--bar-color:var(--grafica-amarillo);" data-name="Partido 1"
+                    title="Your Blog 85%"></div>
             </div>
         </div>
     </main>
