@@ -38,7 +38,10 @@ body {
     --mensaje-usuario-verde: #28a745;
     --mensaje-usuario-rojo: #dc3545;
 }
-
+a{
+    text-decoration: none;
+    
+}
 
 p {
     font-size: 12px;
@@ -189,12 +192,12 @@ h3 {
     margin-right: 10px; 
 }
 
-
+/* BOTONES PASO Y GENERALES */
 #boton-paso,
 #boton-generales {
     background-color: var(--magenta);
     border-radius: 10px;
-    margin: 25px;
+    /* margin: 25px; */
     width: 400px;
     height: 100px;
     padding: 1rem;
@@ -204,6 +207,7 @@ h3 {
     display: flex;
     justify-content: start;
     align-items: center;
+    border: none;
 }
 
 #boton-generales {
@@ -215,6 +219,29 @@ h3 {
     display: flex;
     justify-content: space-around; 
 }
+#boton-container a{
+    margin: 25px;
+    width: 400px;
+    height: 100px;
+    padding: 1rem;
+}
+
+/* ANIMACION BOTONES PASO Y GENERALES */
+#boton-generales:hover{
+    background-color: #69ccf0;
+}
+#boton-paso:hover{
+    background-color:#e865a2;
+}
+
+#boton-generales:active{
+    background-color: #1991bd;
+}
+#boton-paso:active{
+    background-color:#ad1e61;
+}
+/* FIN ANIMACION BOTONES PASO Y GENERALES */
+/* FIN BOTONES PASO Y GENERALES */
 
 #contenido-inferior-texto {
     font-size: 20px;
