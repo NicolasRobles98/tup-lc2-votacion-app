@@ -112,25 +112,31 @@ h3 {
 }
 
 #filtrar {
-    background-color: white;
     padding: 5px;
-    color: var(--textos);
-    border-radius: 15px;
     font-size: 10px;
-    font: #fff;
     text-transform: uppercase;
     text-align: center;
-    
-
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    margin-right: 10px;
+    background-color: #FFF;
 }
 
 
-#menu-informes{
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    padding: 5px;
+#menu-paso {
+    background-color: var(--magenta);
     color: #fff;
+}
+
+#menu-paso:hover {
+    background-color: var(--gris-claro);
+}
+
+#menu-informes,
+#menu-paso,
+#menu-inicio {
     padding: 5px;
     font-size: 10px;
     text-transform: uppercase;
@@ -142,30 +148,22 @@ h3 {
     margin-right: 10px;
 }
 
-#menu-informes:hover {
-    background-color: var(--gris-claro);
-
-}
-
-#menu-paso {
-    background-color: var(--magenta);
-    color: #fff;
+#filtrar {
     padding: 5px;
     font-size: 10px;
     text-transform: uppercase;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
     font-weight: bold;
     cursor: pointer;
-    width: 100px; 
-    margin-right: 10px; 
+    width: 100px;
+    margin-right: 10px;
+    background-color: #FFF;
 }
 
-#menu-paso:hover {
-    background-color: var(--gris-claro);
-}
 
-#inicio {
+
+#menu-inicio {
     background-color: var(--gris-claro);
     border-radius: 5px;
     padding: 5px;
@@ -175,19 +173,18 @@ h3 {
     text-align: center;
     margin-right: 0;
     margin-left: auto;
-    padding: 5px;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100px; 
-    margin-right: 10px; 
 }
 
-#inicio:hover {
-    color: var(--textos);
+
+#menu-informes {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+#menu-informes:hover {
+    background-color: var(--gris-claro);
+
 }
 
 .lista select {
@@ -200,8 +197,45 @@ h3 {
     font-weight: bold;
 }
 
+.lista i {
+    margin-right: 10px;
+    color: black;
+}
+
 .logo {
     width: 150px;
+}
+
+.mensaje-usuario {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.mensaje-usuario p {
+    color: #FFF;
+}
+
+.mensaje-usuario-verde {
+    background-color: var(--mensaje-usuario-verde);
+}
+
+.mensaje-usuario-rojo {
+    background-color: var(--mensaje-usuario-rojo);
+}
+
+.mensaje-usuario-amarillo {
+    background-color: var(--mensaje-usuario-amarillo);
+}
+
+.mensaje-usuario i {
+    margin-right: 10px;
+    color: #FFF;
 }
 
 #boton-informe {
@@ -263,14 +297,54 @@ h3 {
     justify-content: flex-end;
 }
 
-#recuadros {
-    display: flex;
-    justify-content: space-between;
-    flex: 0 0 0 calc(40% 30px);
-    min-height: 400px;
-    text-transform: uppercase;
+.recuadros-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.recuadro {
+    background-color: white;
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+}
+
+.titulo-recuadro {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.recuadro h3 {
+    text-align: left;
+}
+
+.recuadro p {
+    text-align: right;
+    color: black;
+    font-size: 10px;
+}
+
+.contenido-recuadro {
+    padding: 10px;
+    text-align: center;
 
 }
+
+.recuadro .contenido-recuadro {
+    max-height: 325px;
+    overflow-y: auto;
+}
+
+.contenido-recuadro svg {
+    max-width: 100%; 
+    height: auto; 
+    align-items: center;
+    padding-top: 40px;
+  }
 
 #agrup-politicas {
     overflow: auto;
@@ -312,12 +386,11 @@ h3 {
     border: 1px solid #ccc;
     padding: 20px;
     margin-right: 20px
-
 }
 
 .votos:last-child {
-        margin-right: 0;
-    }
+    margin-right: 0;
+}
 
 .votos h2,
 h3 {
@@ -398,7 +471,7 @@ h3 {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
-    background: var(--grafica-bordo-claro);
+    background: var(--grafica-verde-claro);
 }
 
 .progress-bar3 {
@@ -408,7 +481,7 @@ h3 {
     transition: width 0.25s;
     border-radius: 5px;
     width: 35%;
-    background: var(--grafica-bordo-claro);
+    background: var(--grafica-verde);
 }
 
 .progress-bar-text3 {
@@ -418,9 +491,6 @@ h3 {
     font-size: 9px;
 }
 
-/* FIN LINEAS */
-
-/* INICIO LINEAS HORIZONTALES */
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -438,13 +508,13 @@ h3 {
     white-space: nowrap;
 }
 
-/* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+/* Cuando definimos el gráfico en horizontal, lo giramos 90 grados */
 .chart-wrap.horizontal .grid {
     transform: rotate(-90deg);
 }
 
 .chart-wrap.horizontal .bar::after {
-    /* giramos las letras para horizontal*/
+    /* Giramos las letras para horizontal */
     transform: rotate(45deg);
     padding-top: 0px;
     display: block;
@@ -460,11 +530,11 @@ h3 {
     font-size: 10px;
 }
 
-/* posicionamos el % del gráfico*/
+/* Posicionamos el % del gráfico */
 .chart-wrap .grid::before {
     font-size: 0.8em;
     font-weight: bold;
-    content: 0%;
+    content: "100%";
     position: absolute;
     left: -0.5em;
     top: -1.5em;
@@ -473,13 +543,13 @@ h3 {
 .chart-wrap .grid::after {
     font-size: 0.8em;
     font-weight: bold;
-    content: '100%';
+    content: 100%;
     position: absolute;
     right: -1.5em;
     top: -1.5em;
 }
 
-/* giramos las valores de 0% y 100% para horizontal */
+/* Giramos las valores de 0% y 100% para horizontal */
 .chart-wrap.horizontal .grid::before,
 .chart-wrap.horizontal .grid::after {
     transform: rotate(90deg);
@@ -504,6 +574,10 @@ h3 {
     display: inline-block;
     white-space: nowrap;
 }
+
+
+
+
 
 #pie-de-pagina {
     background-color: var(--fondo-Footer);

@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/pages/paso.css">
+    <title>Sistema de Publicación de Resultados Electorales</title>
+    <link rel="shortcut icon" type="image/png" href="img\icons\favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <!--Barra de logo portal-->
         <div class="header-page">
-            <img src="img\icons\Logo_DINE_negativo.a88f983e.png" alt="logo" class="logo"><a href="index.html"></a> Dirección Nacional
-            Electoral
+            <img src="img\icons\Logo_DINE_negativo.a88f983e.png" alt="logo" class="logo"><a href="index.html"></a>
         </div>
         <!--Barra de menú principal-->
         <nav class="menu-barra">
-            <ul>
-                <li><a href="#">Contacto</a></li>
-                <li id="menu-paso"><a href="paso.html">Paso</a></li>
+            <ul class="lista">
+                <li>
+                    <select name="select" id="select">
+                        <option value="">Año</option>
+                    </select>
+                    <select name="select" id="select">
+                        <option value="">Cargo</option>
+                    </select>
+                    <select name="select" id="select">
+                        <option value="">Distrito</option>
+                    </select>
+                </li>
+                <li id="filtrar"><i class="fas fa-search"></i>Filtrar</li>
                 <li id="menu-generales"><a href="generales.html">Generales</a></li>
                 <li id="menu-informes"><a href="informes.html">Informes</a></li>
+                <li id="menu-inicio"><a href="index.html">Inicio</a></li>
+                
             </ul>
         </nav>
     </header>
+    <main>
+        <div class="mensaje-usuario mensaje-usuario-verde">
+            <p><i class="fas fa-thumbs-up"></i>Se agregó con éxito el resultado al informe.</p>
+        </div>
+        
+        <div class="mensaje-usuario mensaje-usuario-rojo">
+            <p><i class="fas fa-exclamation-triangle"></i>Error: Se produjo un error al intentar agregar resultados al informe.</p>
+        </div>
+        
+        <div class="mensaje-usuario mensaje-usuario-amarillo">
+            <p><i class="fas fa-exclamation"></i>La operación no se pudo completar.</p>
+        </div>
+    </main>
 
     <footer>
         <div id="pie-de-pagina">

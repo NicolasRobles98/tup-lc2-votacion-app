@@ -171,6 +171,38 @@ h3 {
     width: 150px;
 }
 
+.mensaje-usuario {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.mensaje-usuario p{
+    color: #FFF;
+}
+
+.mensaje-usuario-verde {
+    background-color: var(--mensaje-usuario-verde);
+}
+
+.mensaje-usuario-rojo {
+    background-color: var(--mensaje-usuario-rojo);
+}
+
+.mensaje-usuario-amarillo {
+    background-color: var(--mensaje-usuario-amarillo);
+}
+
+.mensaje-usuario i {
+    margin-right: 10px;
+    color: #FFF;
+}
+
 body {
     font-family: "Roboto", sans-serif;
 }
