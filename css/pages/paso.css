@@ -44,8 +44,8 @@ a{
 }
 
 p {
-    font-size: 12px;
-    color: var(--textos);
+    font-size: 14px;
+    color: var(--celeste);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -234,6 +234,345 @@ h3 {
     margin-right: 10px;
     color: #FFF;
 }
+
+#boton-informe {
+    background-color: var(--gris-claro);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-left: 30px;
+    margin-right: auto;
+    margin-top: 45px;
+    height: 30px;
+}
+
+#boton-informe:hover {
+    color: var(--textos);
+}
+#mesas-escrutadas,
+#electores,
+#participacion {
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: right;
+    background-size: 50px; 
+}
+#mesas-escrutadas {
+    background-color: var(--celeste);
+}    
+
+#electores {
+    background-color: var(--magenta);   
+}
+
+#participacion {
+    background-color: var(--morado);
+}
+
+
+
+#flex-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#flex-container p{
+    color: #FFF;
+}
+
+.recuadros-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.recuadro {
+    background-color: white;
+    border-radius: 25px;
+    border: 1px var(--borde-Grilla) solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+}
+
+.titulo-recuadro {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.recuadro h3 {
+    text-align: left;
+}
+
+.recuadro p {
+    text-align: right;
+    color: black;
+    font-size: 10px;
+}
+
+.contenido-recuadro {
+    padding: 10px;
+    text-align: center;
+
+}
+
+.recuadro .contenido-recuadro {
+    max-height: 325px;
+    overflow-y: auto;
+}
+
+.contenido-recuadro svg {
+    max-width: 100%; 
+    height: auto; 
+    align-items: center;
+    padding-top: 40px;
+  }
+
+#agrup-politicas {
+    overflow: auto;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.votos {
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2);
+    width: 25%;
+    height: 325px;
+    margin: 0 5px 0 5px;
+    border: 1px var(--borde-Grilla) solid;
+    padding: 0.5rem 1rem;
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-right: 20px
+}
+
+.votos:last-child {
+    margin-right: 0;
+}
+
+.votos h2,
+h3 {
+    padding: 5px;
+}
+
+
+#recuadros p {
+    color: var(--textos);
+    padding: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* #recuadros h2{
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--borde-Grilla);
+} */
+
+/* LINEA 1 */
+.progress {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: var(--grafica-amarillo-claro);
+}
+
+.progress-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width: 40%;
+    background: var(--grafica-amarillo);
+}
+
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+/* LINEA 2 */
+.progress2 {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: rgb(140, 224, 255);
+}
+
+.progress-bar2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width: 25%;
+    background: var(--grafica-celeste);
+}
+
+.progress-bar-text2 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+/* LINEA 3 */
+.progress3 {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: var(--grafica-verde-claro);
+}
+
+.progress-bar3 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width: 35%;
+    background: var(--grafica-verde);
+}
+
+.progress-bar-text3 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+.chart-wrap {
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+}
+
+.chart-wrap .title {
+    font-weight: bold;
+    padding: 1.8em 0 2.8em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+.chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+}
+
+.chart-wrap.horizontal .bar::after {
+    /* Giramos las letras para horizontal */
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+}
+
+.chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+    font-size: 10px;
+}
+
+/* Posicionamos el % del gráfico */
+.chart-wrap .grid::before {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: "0%";
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+}
+
+.chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: "100%";
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+}
+
+/* Giramos las valores de 0% y 100% para horizontal */
+.chart-wrap.horizontal .grid::before,
+.chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+}
+
+.chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+}
+
+.chart-wrap .bar:hover {
+    opacity: 0.7;
+}
+
+.chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#partido1{
+    background-color: var(--grafica-amarillo);
+}
+#partido2{
+    background-color: var(--grafica-lila2);
+}
+#partido3{
+    background-color: var(--grafica-bordo);
+}
+#partido4{
+    background-color: var(--grafica-celeste);
+}
+#partido5{
+    background-color: var(--grafica-lila);
+}
+#partido6{
+    background-color: var(--grafica-bordo);
+}
+#partido7{
+    background-color: var(--grafica-verde);
+}
+#partido8{
+    background-color: var(--grafica-gris);
+}
+
 
 #pie-de-pagina {
     background-color: var(--fondo-Footer);

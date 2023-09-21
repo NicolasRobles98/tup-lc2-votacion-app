@@ -255,46 +255,45 @@ h3 {
 #boton-informe:hover {
     color: var(--textos);
 }
-
+#mesas-escrutadas,
+#electores,
+#participacion {
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 15px;
+    width: 184px;
+    height: 70px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    background-size: 50px; 
+}
 #mesas-escrutadas {
     background-color: var(--celeste);
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 15px;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    color: #fff;
-}
+}    
 
 #electores {
-    background-color: var(--magenta);
-    border-radius: 10px;
-    margin: 15px;
-    font-weight: bold;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    color: #fff;
+    background-color: var(--magenta);   
 }
 
 #participacion {
     background-color: var(--morado);
-    border-radius: 10px;
-    margin: 15px;
-    font-weight: bold;
-    width: 184px;
-    height: 70px;
-    padding: 0.5rem 1rem;
-    font-size: 12px;
-    color: #fff;
 }
+
+
 
 #flex-container {
     display: flex;
     justify-content: flex-end;
+}
+
+#flex-container p{
+    color: #FFF;
+    
 }
 
 .recuadros-container {
@@ -534,7 +533,7 @@ h3 {
 .chart-wrap .grid::before {
     font-size: 0.8em;
     font-weight: bold;
-    content: "100%";
+    content: "0%";
     position: absolute;
     left: -0.5em;
     top: -1.5em;
@@ -543,7 +542,7 @@ h3 {
 .chart-wrap .grid::after {
     font-size: 0.8em;
     font-weight: bold;
-    content: 100%;
+    content: "100%";
     position: absolute;
     right: -1.5em;
     top: -1.5em;
@@ -574,6 +573,33 @@ h3 {
     display: inline-block;
     white-space: nowrap;
 }
+
+#partido1{
+    background-color: var(--grafica-amarillo);
+}
+#partido2{
+    background-color: var(--grafica-lila2);
+}
+#partido3{
+    background-color: var(--grafica-bordo);
+}
+#partido4{
+    background-color: var(--grafica-celeste);
+}
+#partido5{
+    background-color: var(--grafica-lila);
+}
+#partido6{
+    background-color: var(--grafica-bordo);
+}
+#partido7{
+    background-color: var(--grafica-verde);
+}
+#partido8{
+    background-color: var(--grafica-gris);
+}
+
+
 
 
 
