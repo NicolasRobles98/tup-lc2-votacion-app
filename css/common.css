@@ -38,7 +38,10 @@ body {
     --mensaje-usuario-verde: #28a745;
     --mensaje-usuario-rojo: #dc3545;
 }
-
+a{
+    text-decoration: none;
+    
+}
 
 p {
     font-size: 12px;
@@ -71,9 +74,11 @@ h3 {
     padding: 0.5em;
     background-color: var(--fondo-Cabecera);
     color: white;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
+
+
 
 
 
@@ -107,6 +112,31 @@ h3 {
 .menu-barra a.active {
     font-weight: bold; 
 }
+.flex-container{
+    display: flex;
+    width: 100%;
+    margin: 15px;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.item1{
+    margin-left: 20px;
+    margin-right: 2px;
+    min-width: 200px;
+    max-width: 700px;
+
+}
+.item2 img{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 2px;
+    width: 300px;
+
+}
+
+
 
 #menu-paso {
     background-color: var(--magenta);
@@ -147,10 +177,6 @@ h3 {
 
 
 
-#sec-titulo {
-    margin: 15px;
-    max-width: 350px;
-}
 
 #menu-paso,
 #menu-generales,
@@ -166,34 +192,37 @@ h3 {
     margin-right: 10px; 
 }
 
-
+/* BOTONES PASO Y GENERALES */
 #boton-paso,
 #boton-generales {
     background-color: var(--magenta);
     border-radius: 10px;
-    margin: 25px;
+    /* margin: 25px; */
     width: 400px;
     height: 100px;
     padding: 1rem;
     font-size: 28px;
     color: #fff;
     cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: none;
 }
 
 #boton-generales {
     background-color: var(--celeste);
-    margin-left: 0; 
 }
 
 
 #boton-container {
     display: flex;
     justify-content: space-between; 
-    
 }
 
 #contenido-inferior-texto {
     font-size: 20px;
+    margin: 20px;
 }
 
 #pie-de-pagina {
@@ -229,3 +258,4 @@ h3 {
     color: var(--texto-footer);
     text-decoration: underline;
 }
+

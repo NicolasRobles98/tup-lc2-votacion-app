@@ -51,18 +51,28 @@ h1 {
     color: var(--titulos);
     font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
+
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 17px;
     color: var(--titulos);
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 1.8em 0 0 0;;
 }
 
 h3 {
-    font-size: 18px;
     color: var(--titulos);
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--borde-Grilla);
+}
+
+.contenedor-titulo{
+    padding: 2em;
 }
 
 .header-page {
@@ -214,17 +224,54 @@ h3 {
 }
 
 #recuadros {
-    border-radius: 25px;
-    border: 1px var(--borde-Grilla) solid;
-    box-shadow: 2 2 2 1px, rgba(0 0 0 0.2);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex: 0 0 0 calc(40% 30px);
+    min-height: 400px;
+    text-transform: uppercase;
+
 }
 
 #agrup-politicas{
     overflow-y: scroll;
-    height: 325px;
+    font-weight: bold;
+    font-size: 12px;
 }
+/* SCROLL */
+/* ::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 2em;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 208, 255); 
+    background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent);
+    border-radius: 2em;
+    height: 75%;
+} */
+
+/* HAY QUE INTENTAR QUE EL SCROLL QUEDE ADENTRO DEL DIV */
+/* FIN SCROLL */
+
+.votos{
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2);
+    width: 25%;
+    height: 325px;
+    margin: 0 5px 0 5px;
+    border: 1px var(--borde-Grilla) solid;
+    padding: 0.5rem 1rem;
+
+}
+.votos h2,h3{
+    padding: 5px;
+}
+
 
 #recuadros p{
     color: var(--textos);
@@ -235,17 +282,19 @@ h3 {
     text-align: right;
 }
 
-#recuadros h2{
+/* #recuadros h2{
     font-size: 12px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
-}
+} */
 
+/* LINEA 1 */
 .progress {
     height: 35px;
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
+    background: var(--grafica-amarillo-claro);
 }
 
 .progress-bar {
@@ -254,6 +303,8 @@ h3 {
     align-items: center;
     transition: width 0.25s;
     border-radius: 5px;
+    width:40%; 
+    background: var(--grafica-amarillo);
 }
 
 .progress-bar-text {
@@ -262,10 +313,133 @@ h3 {
     color: var(--textos);
     font-size: 9px;
 }
+/* LINEA 2 */
+.progress2 {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: rgb(140, 224, 255);
+}
 
+.progress-bar2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width:25%; 
+    background: var(--grafica-celeste);
+}
 
+.progress-bar-text2 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+/* LINEA 3 */
+.progress3 {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: var(--grafica-bordo-claro);
+}
 
+.progress-bar3 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width:35%; 
+    background: var(--grafica-bordo-claro);
+}
 
+.progress-bar-text3 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+/* FIN LINEAS */
+
+/* INICIO LINEAS HORIZONTALES */
+.chart-wrap {
+    --chart-width: 260px;
+    --grid-color: #aaa;
+    --bar-thickness: 25px;
+    --bar-rounded: 3px;
+    --bar-spacing: 10px;
+    font-family: sans-serif;
+    width: var(--chart-width);
+    }
+    .chart-wrap .title {
+    font-weight: bold;
+    padding: 1.8em 0 2.8em;
+    text-align: center;
+    white-space: nowrap;
+    }
+    /* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
+    .chart-wrap.horizontal .grid {
+    transform: rotate(-90deg);
+    }
+    .chart-wrap.horizontal .bar::after {
+    /* giramos las letras para horizontal*/
+    transform: rotate(45deg);
+    padding-top: 0px;
+    display: block;
+    }
+    .chart-wrap .grid {
+    margin-left: 50px;
+    position: relative;
+    padding: 5px 0 5px 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid var(--grid-color);
+    font-size: 10px;
+    }
+    /* posicionamos el % del gráfico*/
+    .chart-wrap .grid::before {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '0%';
+    position: absolute;
+    left: -0.5em;
+    top: -1.5em;
+    }
+    .chart-wrap .grid::after {
+    font-size: 0.8em;
+    font-weight: bold;
+    content: '100%';
+    position: absolute;
+    right: -1.5em;
+    top: -1.5em;
+    }
+    /* giramos las valores de 0% y 100% para horizontal */
+    .chart-wrap.horizontal .grid::before,
+    .chart-wrap.horizontal .grid::after {
+    transform: rotate(90deg);
+    }
+    .chart-wrap .bar {
+    width: var(--bar-value);
+    height: var(--bar-thickness);
+    margin: var(--bar-spacing) 0;
+    background-color: var(--bar-color);
+    border-radius: 0 var(--bar-rounded) var(--bar-rounded) 0;
+    }
+    .chart-wrap .bar:hover {
+    opacity: 0.7;
+    }
+    .chart-wrap .bar::after {
+    content: attr(data-name);
+    margin-left: 100%;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+    }
+    /* FIN LINEAS HORIZONTALES */
 
 
 #pie-de-pagina {
