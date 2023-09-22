@@ -4,7 +4,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 :root {
     --magenta: #ee3d8f;
     --celeste: #37bbed;
@@ -38,35 +37,31 @@ body {
     --mensaje-usuario-verde: #28a745;
     --mensaje-usuario-rojo: #dc3545;
 }
-a{
+
+a {
     text-decoration: none;
-    
 }
 
-p {
+.texto-path {
     font-size: 14px;
     color: var(--celeste);
-    font-family: 'Roboto', sans-serif;
 }
-
 
 h1 {
     font-size: 26px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
 }
 
 h2 {
     font-size: 22px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
 }
 
 h3 {
     font-size: 18px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
+    padding: 5px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
 }
@@ -74,7 +69,6 @@ h3 {
 .contenedor-titulo {
     padding: 2em;
 }
-
 
 .header-page {
     padding: 0.5em;
@@ -84,50 +78,40 @@ h3 {
     margin: 0 auto;
 }
 
-
-
-
-
 .menu-barra {
     background-color: var(--fondo-Menu);
     padding: 20px;
 }
 
-
 .menu-barra ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; 
+    display: flex;
 }
-
 
 .menu-barra li {
-    margin-right: 20px; 
+    margin-right: 20px;
 }
-
 
 .menu-barra a {
-    color: #FFF; 
-    text-decoration: none; 
+    color: #FFF;
+    text-decoration: none;
     font-size: 10px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
-
 
 .menu-barra a.active {
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.flex-container{
+.flex-container {
     display: flex;
     width: 100%;
     margin: 15px;
     align-items: center;
     justify-content: space-around;
-
 }
-
 
 #menu-generales {
     background-color: var(--celeste);
@@ -148,8 +132,8 @@ h3 {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    width: 100px; 
-    margin-right: 10px; 
+    width: 100px;
+    margin-right: 10px;
 }
 
 #filtrar {
@@ -160,25 +144,16 @@ h3 {
     border-radius: 15px;
     font-weight: bold;
     cursor: pointer;
-    width: 100px; 
-    margin-right: 10px; 
+    width: 100px;
+    margin-right: 10px;
     background-color: #FFF;
 }
 
-
-
-#menu-inicio{
+#menu-inicio {
     background-color: var(--gris-claro);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    font: #fff;
-    text-transform: uppercase;
-    text-align: center;
     margin-right: 0;
     margin-left: auto;
 }
-
 
 #menu-informes {
     background-color: transparent;
@@ -189,7 +164,6 @@ h3 {
 
 #menu-informes:hover {
     background-color: var(--gris-claro);
-
 }
 
 .lista select {
@@ -201,13 +175,13 @@ h3 {
     color: var(--celeste);
     font-weight: bold;
 }
-.lista i{
+
+.lista i {
     margin-right: 10px;
     color: black;
 }
 
-
-.logo{
+.logo {
     width: 150px;
 }
 
@@ -220,10 +194,6 @@ h3 {
     font-size: 12px;
     font-weight: 200;
     text-align: center;
-}
-
-.mensaje-usuario p{
-    color: #FFF;
 }
 
 .mensaje-usuario-verde {
@@ -272,30 +242,24 @@ h3 {
     color: #fff;
     display: flex;
     align-items: center;
-    background-size: 50px; 
+    background-size: 50px;
 }
 
 #mesas-escrutadas {
     background-color: var(--celeste);
-}    
+}
 
 #electores {
-    background-color: var(--magenta);   
+    background-color: var(--magenta);
 }
 
 #participacion {
     background-color: var(--morado);
 }
 
-
-
 #flex-container {
     display: flex;
     justify-content: flex-end;
-}
-
-#flex-container p{
-    color: #FFF;
 }
 
 .recuadros-container {
@@ -332,8 +296,6 @@ h3 {
 
 .contenido-recuadro {
     padding: 10px;
-    text-align: center;
-
 }
 
 .recuadro .contenido-recuadro {
@@ -342,56 +304,13 @@ h3 {
 }
 
 .contenido-recuadro svg {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
     align-items: center;
     padding-top: 40px;
-  }
-
-#agrup-politicas {
-    overflow: auto;
-    font-weight: bold;
-    font-size: 12px;
 }
 
-.votos {
-    border-radius: 25px;
-    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2);
-    width: 25%;
-    height: 325px;
-    margin: 0 5px 0 5px;
-    border: 1px var(--borde-Grilla) solid;
-    padding: 0.5rem 1rem;
-    flex: 1;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-right: 20px
-}
-
-.votos:last-child {
-    margin-right: 0;
-}
-
-.votos h2,
-h3 {
-    padding: 5px;
-}
-
-
-#recuadros p {
-    color: var(--textos);
-    padding: 5px;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-}
-
-/* #recuadros h2{
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 1px solid var(--borde-Grilla);
-} */
+/*recuadro agrupaciones politicas*/
 
 /* LINEA 1 */
 .progress {
@@ -471,6 +390,9 @@ h3 {
     font-size: 9px;
 }
 
+/*Fin recuadro agrupaciones politicas*/
+
+/* comienzo recuadro resumen de votos*/
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -555,38 +477,41 @@ h3 {
     white-space: nowrap;
 }
 
-#partido1{
+#partido1 {
     background-color: var(--grafica-amarillo);
 }
-#partido2{
+
+#partido2 {
     background-color: var(--grafica-lila2);
 }
-#partido3{
+
+#partido3 {
     background-color: var(--grafica-bordo);
 }
-#partido4{
+
+#partido4 {
     background-color: var(--grafica-celeste);
 }
-#partido5{
+
+#partido5 {
     background-color: var(--grafica-lila);
 }
-#partido6{
+
+#partido6 {
     background-color: var(--grafica-bordo);
 }
-#partido7{
+
+#partido7 {
     background-color: var(--grafica-verde);
 }
-#partido8{
+
+#partido8 {
     background-color: var(--grafica-gris);
 }
 
+/*fin recuadro resumen de votos*/
 
-#pie-de-pagina {
-    background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
-}
-
-
+/*footer*/
 #pie-de-pagina {
     background-color: var(--fondo-Footer);
     padding: 20px;
@@ -594,11 +519,9 @@ h3 {
     display: flex;
 }
 
-
 #pie-de-pagina img {
     height: 40px;
 }
-
 
 #pie-de-pagina p {
     font-size: 12px;
@@ -606,8 +529,9 @@ h3 {
     color: var(--texto-footer);
 }
 
-
 #pie-de-pagina a {
     color: var(--texto-footer);
     text-decoration: underline;
 }
+
+/*fin footer*/
