@@ -43,27 +43,32 @@ body {
 p {
     font-size: 14px;
     color: var(--celeste);
-    font-family: 'Roboto', sans-serif;
 }
 
 
 h1 {
+    
+}
+
+h1 {
     font-size: 26px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 22px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
 }
 
 h3 {
     font-size: 18px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -203,17 +208,7 @@ h3 {
     color: #FFF;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-}
 
-h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
 
 .grilla {
     width: 1024px;

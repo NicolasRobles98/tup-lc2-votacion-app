@@ -4,7 +4,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 :root {
     --magenta: #ee3d8f;
     --celeste: #37bbed;
@@ -39,17 +38,14 @@ body {
     --mensaje-usuario-rojo: #dc3545;
 }
 
-p {
+.texto-path {
     font-size: 14px;
     color: var(--celeste);
-    font-family: 'Roboto', sans-serif;
 }
-
 
 h1 {
     font-size: 26px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
 
 }
@@ -57,19 +53,10 @@ h1 {
 h2 {
     font-size: 17px;
     color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
     text-align: center;
     font-weight: bold;
     padding: 1.8em 0 0 0;
     ;
-}
-
-h3 {
-    color: var(--titulos);
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 1px solid var(--borde-Grilla);
 }
 
 .contenedor-titulo {
@@ -103,8 +90,6 @@ h3 {
 .menu-barra a {
     color: #FFF;
     text-decoration: none;
-    font-size: 10px;
-    text-transform: uppercase;
 }
 
 .menu-barra a.active {
@@ -120,14 +105,11 @@ h3 {
     font-weight: bold;
     cursor: pointer;
     width: 100px;
-    margin-right: 10px;
     background-color: #FFF;
 }
 
-
 #menu-paso {
     background-color: var(--magenta);
-    color: #fff;
 }
 
 #menu-paso:hover {
@@ -145,41 +127,18 @@ h3 {
     font-weight: bold;
     cursor: pointer;
     width: 100px;
-    margin-right: 10px;
 }
-
-#filtrar {
-    padding: 5px;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100px;
-    margin-right: 10px;
-    background-color: #FFF;
-}
-
-
 
 #menu-inicio {
     background-color: var(--gris-claro);
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 10px;
-    font: #fff;
-    text-transform: uppercase;
-    text-align: center;
     margin-right: 0;
     margin-left: auto;
 }
 
-
 #menu-informes {
     background-color: transparent;
     border: 1px solid #fff;
-    color: #fff;
+    border-radius: 15px;
 }
 
 #menu-informes:hover {
@@ -211,13 +170,12 @@ h3 {
     margin: 20px auto;
     padding: 15px;
     border-radius: 10px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 200;
-    text-align: center;
 }
 
 .mensaje-usuario p {
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
     color: #FFF;
 }
 
@@ -255,6 +213,7 @@ h3 {
 #boton-informe:hover {
     color: var(--textos);
 }
+
 .capsulas-procentajes {
     border-radius: 10px;
     font-weight: bold;
@@ -266,30 +225,24 @@ h3 {
     color: #fff;
     display: flex;
     align-items: center;
-    background-size: 50px; 
+    background-size: 50px;
 }
+
 #mesas-escrutadas {
     background-color: var(--celeste);
-}    
+}
 
 #electores {
-    background-color: var(--magenta);   
+    background-color: var(--magenta);
 }
 
 #participacion {
     background-color: var(--morado);
 }
 
-
-
 #flex-container {
     display: flex;
     justify-content: flex-end;
-}
-
-#flex-container p{
-    color: #FFF;
-    
 }
 
 .recuadros-container {
@@ -314,10 +267,6 @@ h3 {
     padding-top: 14px;
 }
 
-.recuadro h3 {
-    text-align: left;
-}
-
 .recuadro p {
     text-align: right;
     color: black;
@@ -326,8 +275,6 @@ h3 {
 
 .contenido-recuadro {
     padding: 10px;
-    text-align: center;
-
 }
 
 .recuadro .contenido-recuadro {
@@ -336,18 +283,11 @@ h3 {
 }
 
 .contenido-recuadro svg {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
     align-items: center;
     padding-top: 40px;
-  }
-
-#agrup-politicas {
-    overflow: auto;
-    font-weight: bold;
-    font-size: 12px;
 }
-
 
 /* SCROLL */
 /* ::-webkit-scrollbar{
@@ -370,44 +310,15 @@ h3 {
 /* HAY QUE INTENTAR QUE EL SCROLL QUEDE ADENTRO DEL DIV */
 /* FIN SCROLL */
 
-.votos {
-    border-radius: 25px;
-    box-shadow: 2px 2px 2px 1px rgb(0, 0, 0, 0.2);
-    width: 25%;
-    height: 325px;
-    margin: 0 5px 0 5px;
-    border: 1px var(--borde-Grilla) solid;
-    padding: 0.5rem 1rem;
-    flex: 1;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-right: 20px
-}
-
-.votos:last-child {
-    margin-right: 0;
-}
-
-.votos h2,
-h3 {
-    padding: 5px;
-}
-
-
-#recuadros p {
-    color: var(--textos);
-    padding: 5px;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: right;
-}
-
-/* #recuadros h2{
-    font-size: 12px;
+/*recuadro agrupaciones politicas*/
+.contenido-recuadro h3 {
+    color: var(--titulos);
+    font-size: 18px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
-} */
+    padding: 5px;
+    text-align: left;
+}
 
 /* LINEA 1 */
 .progress {
@@ -487,6 +398,9 @@ h3 {
     font-size: 9px;
 }
 
+/*Fin recuadro agrupaciones politicas*/
+
+/* comienzo recuadro resumen de votos*/
 .chart-wrap {
     --chart-width: 260px;
     --grid-color: #aaa;
@@ -571,43 +485,41 @@ h3 {
     white-space: nowrap;
 }
 
-#partido1{
+#partido1 {
     background-color: var(--grafica-amarillo);
 }
-#partido2{
+
+#partido2 {
     background-color: var(--grafica-lila2);
 }
-#partido3{
+
+#partido3 {
     background-color: var(--grafica-bordo);
 }
-#partido4{
+
+#partido4 {
     background-color: var(--grafica-celeste);
 }
-#partido5{
+
+#partido5 {
     background-color: var(--grafica-lila);
 }
-#partido6{
+
+#partido6 {
     background-color: var(--grafica-bordo);
 }
-#partido7{
+
+#partido7 {
     background-color: var(--grafica-verde);
 }
-#partido8{
+
+#partido8 {
     background-color: var(--grafica-gris);
 }
 
+/*fin recuadro resumen de votos*/
 
-
-
-
-
-
-#pie-de-pagina {
-    background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
-}
-
-
+/*footer*/
 #pie-de-pagina {
     background-color: var(--fondo-Footer);
     padding: 20px;
@@ -615,11 +527,9 @@ h3 {
     display: flex;
 }
 
-
 #pie-de-pagina img {
     height: 40px;
 }
-
 
 #pie-de-pagina p {
     font-size: 12px;
@@ -627,8 +537,9 @@ h3 {
     color: var(--texto-footer);
 }
 
-
 #pie-de-pagina a {
     color: var(--texto-footer);
     text-decoration: underline;
 }
+
+/*fin footer*/
