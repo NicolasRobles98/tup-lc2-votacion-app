@@ -50,7 +50,8 @@ h1 {
     font-size: 26px;
     color: var(--titulos);
     padding-bottom: 20px;
-    text-align: center;
+    padding-left: 40px;
+    text-align: left;
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
@@ -299,21 +300,25 @@ td {
 
 
 .grilla-agrupaciones {
-    width: 100px;
     height: 100px;
-    overflow-y: scroll;
-    padding: 15px;
-    padding-left: 70px;
+    padding: 10px;
     font-size: 10px;
     color: var(--textos);
+    text-align: left;
+    overflow-y: auto;
+
+}
+
+.grilla-agrupaciones p{
+    color: black;
+    font-size: 10px;
 }
 
 .right-align {
     text-align: right;
-    margin: 0;
-    font-size: 12px;
     font-weight: bold;
 }
+
 
 
 
