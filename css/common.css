@@ -225,6 +225,7 @@ h3 {
     margin: 20px;
 }
 
+/*footer*/
 #pie-de-pagina {
     background-color: var(--fondo-Footer);
     color: var(--texto-footer);

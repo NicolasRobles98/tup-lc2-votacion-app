@@ -67,7 +67,7 @@ h2 {
 h3 {
     color: var(--titulos);
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
     border-bottom: 1px solid var(--borde-Grilla);
 }
@@ -255,9 +255,7 @@ h3 {
 #boton-informe:hover {
     color: var(--textos);
 }
-#mesas-escrutadas,
-#electores,
-#participacion {
+.capsulas-procentajes {
     border-radius: 10px;
     font-weight: bold;
     margin: 15px;
@@ -267,9 +265,7 @@ h3 {
     font-size: 12px;
     color: #fff;
     display: flex;
-    justify-content: space-between; 
     align-items: center;
-    text-align: center;
     background-size: 50px; 
 }
 #mesas-escrutadas {
@@ -315,6 +311,7 @@ h3 {
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
+    padding-top: 14px;
 }
 
 .recuadro h3 {
@@ -613,22 +610,21 @@ h3 {
 
 #pie-de-pagina {
     background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
     padding: 20px;
-    font-size: 12px;
     line-height: 1.4;
+    display: flex;
 }
 
 
 #pie-de-pagina img {
-    width: 100px;
+    height: 40px;
 }
 
 
 #pie-de-pagina p {
+    font-size: 12px;
     margin: 0;
-    text-align: right, justify;
-    color: #727272;
+    color: var(--texto-footer);
 }
 
 
