@@ -47,10 +47,6 @@ p {
 
 
 h1 {
-    
-}
-
-h1 {
     font-size: 26px;
     color: var(--titulos);
     padding-bottom: 20px;
@@ -189,6 +185,7 @@ h3 {
 
 .mensaje-usuario p{
     color: #FFF;
+    font-size: 12px;
 }
 
 .mensaje-usuario-verde {
@@ -207,8 +204,6 @@ h3 {
     margin-right: 10px;
     color: #FFF;
 }
-
-
 
 .grilla {
     width: 1024px;
@@ -251,13 +246,12 @@ tbody td {
 
 td svg {
     max-width: 100%;  
-    align-items: center;
+    align-items: left;
 }
 
 td {
     width: 400px; 
-    height: 400px;
-     
+    height: 270px;
 }
 
 .texto-elecciones-chico {
@@ -269,6 +263,7 @@ td {
 .texto-path-chico {
     font-size: 11px;
     color: var(--celeste);
+    text-align: center;
 }
 
 
@@ -307,7 +302,8 @@ td {
     width: 100px;
     height: 100px;
     overflow-y: scroll;
-    padding: 5px;
+    padding: 15px;
+    padding-left: 70px;
     font-size: 10px;
     color: var(--textos);
 }
