@@ -73,8 +73,8 @@ h3 {
     padding: 0.5em;
     background-color: var(--fondo-Cabecera);
     color: white;
-    width: 100%;
-    margin: 0 auto;
+    width: auto;
+   
 }
 
 
