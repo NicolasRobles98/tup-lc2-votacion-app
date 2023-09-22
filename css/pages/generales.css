@@ -248,7 +248,7 @@ h2 {
 .recuadros-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    
 }
 
 .recuadro {
@@ -322,7 +322,7 @@ h2 {
 
 /* LINEA 1 */
 .progress {
-    height: 35px;
+    height: 20px;
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -348,7 +348,7 @@ h2 {
 
 /* LINEA 2 */
 .progress2 {
-    height: 35px;
+    height: 20px;
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -374,7 +374,7 @@ h2 {
 
 /* LINEA 3 */
 .progress3 {
-    height: 35px;
+    height: 20px;
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -397,6 +397,57 @@ h2 {
     color: var(--textos);
     font-size: 9px;
 }
+
+.progress4 {
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: var(--grafica-lila-claro);
+}
+
+.progress-bar4 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width: 67%;
+    background: var(--grafica-lila);
+}
+
+.progress-bar-text4 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
+.progress5 {
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: var(--grafica-bordo-claro);
+}
+
+.progress-bar5 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    width: 10%;
+    background: var(--grafica-bordo);
+}
+
+.progress-bar-text5 {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--textos);
+    font-size: 9px;
+}
+
 
 /*Fin recuadro agrupaciones politicas*/
 
