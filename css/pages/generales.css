@@ -129,6 +129,10 @@ h2 {
     width: 100px;
 }
 
+.boton-nav{
+    padding-top: 9px !important;
+}
+
 #menu-inicio {
     background-color: var(--gris-claro);
     margin-right: 0;

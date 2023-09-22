@@ -135,6 +135,9 @@ h3 {
     width: 100px;
     margin-right: 10px;
 }
+.boton-nav{
+    padding-top: 9px !important;
+}
 
 #filtrar {
     padding: 5px;
