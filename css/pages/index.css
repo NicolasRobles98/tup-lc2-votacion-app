@@ -62,19 +62,21 @@ h3 {
     color: var(--titulos);
 }
 
-
+.header-color{
+    background-color: var(--fondo-Cabecera);
+}
 .header-page {
     padding: 0.5em;
     background-color: var(--fondo-Cabecera);
     color: white;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
 
 .menu-barra {
     background-color: var(--fondo-Menu);
-    padding: 20px;
+    padding: 10px;
 }
 
 .menu-barra ul {
