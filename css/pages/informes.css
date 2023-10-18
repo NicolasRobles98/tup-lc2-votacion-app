@@ -268,7 +268,6 @@ td {
     text-align: center;
 }
 
-
 .dato-general {
     border-radius: 10px;
     margin: 15px;
@@ -330,32 +329,20 @@ td {
 
 #pie-de-pagina {
     background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
-}
-
-
-#pie-de-pagina {
-    background-color: var(--fondo-Footer);
-    color: var(--texto-footer);
     padding: 20px;
-    font-size: 12px;
     line-height: 1.4;
+    display: flex;
 }
-
 
 #pie-de-pagina img {
-    width: 100px; 
-    
-    
+    height: 40px;
 }
-
 
 #pie-de-pagina p {
+    font-size: 12px;
     margin: 0;
-    text-align: right, justify;
-    color: #727272;
+    color: var(--texto-footer);
 }
-
 
 #pie-de-pagina a {
     color: var(--texto-footer);
