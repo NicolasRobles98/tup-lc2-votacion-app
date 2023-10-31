@@ -9,6 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="img\icons\favicon-16x16.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="C:\Users\windows\Desktop\Tecnicatura programas\TP LABORATORIO COMPUTACION 2\tup-lc2-votacion-app\js\pages\paso.js" defer></script>
 </head>
 
 <body>
@@ -21,15 +22,19 @@
         <nav class="menu-barra">
             <ul class="lista">
                 <li>
-                    <select name="select" id="select">
-                        <option value="">Año</option>
+                    <select name="anio" id="anio" onchange="seleccionAño(),actualizarDatos()">
+                        <option value="0">Año</option>
                     </select>
-                    <select name="select" id="select">
-                        <option value="">Cargo</option>
+                    <select name="cargo" id="cargo" onchange="cargoSeleccionado(),actualizarDatos()">
+                        <option value="0">Cargo</option>
                     </select>
-                    <select name="select" id="select">
-                        <option value="">Distrito</option>
+                    <select name="distrito" id="distrito" onchange="distritoSeleccionado(),actualizarDatos()">
+                        <option value="0">Distrito</option>
                     </select>
+                    <input type="hidden" id="hdSeccionProvincial" name="hdSeccionProvincial">
+                        <select id="seccion" onchange="seccionSeleccionada(),actualizarDatos()">
+                            <option value="0">Sección</option>
+                        </select>
                 </li>
                 
                 <li id="filtrar" class="boton-nav"><i class="fas fa-search"></i>Filtrar</li>
@@ -41,25 +46,25 @@
         </nav>
     </header>
     <main>
-        <div class="mensaje-usuario mensaje-usuario-verde">
+        <div id= "mensaje-usuario" class="mensaje-usuario mensaje-usuario-verde" style="display: none;">
             <p><i class="fas fa-thumbs-up"></i>Se agregó con éxito el resultado al informe.</p>
         </div>
 
-        <div class="mensaje-usuario mensaje-usuario-rojo">
+        <div id= "mensaje-usuario" class="mensaje-usuario mensaje-usuario-rojo" style="display: none;">
             <p><i class="fas fa-exclamation-triangle"></i>Error: Se produjo un error al intentar agregar resultados al
                 informe.</p>
         </div>
 
-        <div class="mensaje-usuario mensaje-usuario-amarillo">
+        <div id= "mensaje-usuario" class="mensaje-usuario mensaje-usuario-amarillo" style="display: none;">
             <p><i class="fas fa-exclamation"></i>La operación no se pudo completar.</p>
         </div>
         <div class="contenedor-titulo">
-            <h1>Elecciones 2021 | Paso</h1>
-            <p class="texto-path"> 2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires </p>
+            <h1 id="titulo">Elecciones 2021 | Paso</h1>
+            <p class="texto-path" id="subtitulo"> 2020 > Generales > Provisorio > Senadores Nacionales > Buenos Aires </p>
         </div>
 
         <div id="flex-container">
-            <button id="boton-informe">
+            <button id="boton-informe" onclick="agregarAInforme()">
                 + AGREGAR A INFORME
             </button>
             <div id="mesas-escrutadas" class="capsulas-procentajes">
