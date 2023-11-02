@@ -29,16 +29,16 @@ async function cargarCargos() {
         const datos = await response.json();
 
         cargosSelect.innerHTML = '<option value="">Cargo</option>';
-
-        datos.forEach(dato => {
-            dato.Cargos.forEach(cargo => {
+            
+            datos[tipoEleccion].Cargos.forEach(cargo => {
                 const option = document.createElement("option");
                 option.value = cargo.IdCargo;
                 option.text = cargo.Cargo;
                 cargosSelect.appendChild(option);
+            
             });
-        });
-    }
+        
+    };
 }
 
 
@@ -51,8 +51,7 @@ async function cargarDistritos() {
 
         distritosSelect.innerHTML = '<option value="">Distrito</option>';
 
-        datos.forEach(dato => {
-            dato.Cargos.forEach(cargo => {
+            datos[tipoEleccion].Cargos.forEach(cargo => {
                 if (cargo.IdCargo === cargoSeleccionado) {
                     cargo.Distritos.forEach(distrito => {
                         const option = document.createElement("option");
@@ -62,7 +61,6 @@ async function cargarDistritos() {
                     });
                 }
             });
-        });
     }
 }
 
@@ -70,7 +68,6 @@ async function cargarDistritos() {
 async function cargarSecciones() {
     const cargoSeleccionado = cargosSelect.value;
     const distritoSeleccionado = distritosSelect.value;
-    console.log(distritoSeleccionado)
 
     if (distritoSeleccionado) {
         const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + periodosSelect.value);
@@ -78,8 +75,7 @@ async function cargarSecciones() {
 
         seccionSelect.innerHTML = '<option value="">Sección</option>';
 
-        datos.forEach(dato => {
-            dato.Cargos.forEach(cargo => {
+            datos[tipoEleccion].Cargos.forEach(cargo => {
                 if (cargo.IdCargo === cargoSeleccionado) {
                     cargo.Distritos.forEach(distrito => {
                         if (distrito.IdDistrito == distritoSeleccionado) {
@@ -94,7 +90,6 @@ async function cargarSecciones() {
                     });
                 }
             });
-        });
 
         
     }
