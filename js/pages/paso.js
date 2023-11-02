@@ -67,8 +67,8 @@ async function cargarDistritos() {
 }
 
 
-
 async function cargarSecciones() {
+    const cargoSeleccionado = cargosSelect.value;
     const distritoSeleccionado = distritosSelect.value;
     console.log(distritoSeleccionado)
 
@@ -79,22 +79,26 @@ async function cargarSecciones() {
         seccionSelect.innerHTML = '<option value="">Sección</option>';
 
         datos.forEach(dato => {
-            dato.Distrito.forEach(distrito => {
-                if (distrito.IdDistrito === distritoSeleccionado) {
-                    distrito.SeccionProvincial.forEach(seccionProvincial => {
-                        seccionProvincial.Secciones.forEach(seccion =>{
-                        const option = document.createElement("option");
-                        option.value = seccion.IdSeccionProvincial;
-                        option.text = seccion.Seccion;
-                        seccionSelect.appendChild(option);} );
-                        
+            dato.Cargos.forEach(cargo => {
+                if (cargo.IdCargo === cargoSeleccionado) {
+                    cargo.Distritos.forEach(distrito => {
+                        if (distrito.IdDistrito == distritoSeleccionado) {
+                                distrito.SeccionesProvinciales.forEach(seccionProvincial => {
+                                seccionProvincial.Secciones.forEach(seccion =>{
+                                const option = document.createElement("option");
+                                option.value = seccion.IdSeccion;
+                                option.text = seccion.Seccion;
+                                seccionSelect.appendChild(option);} );
+                            });
+                        }
                     });
                 }
             });
         });
+
+        
     }
 }
-
 
 
 periodosSelect.addEventListener("change", cargarCargos);
