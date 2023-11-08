@@ -7,9 +7,9 @@ const cargosSelect = document.getElementById("cargo");
 const distritosSelect = document.getElementById("distrito");
 const seccionSelect = document.getElementById("seccion");
 const hdSeccionSelect = document.getElementById("hdSeccionProvincial");
-const mesasEscrutadas = document.getElementById('mesas-escrutadas')
-const electores = document.getElementById('electores')
-const participacionEscrutado = document.getElementById('participacion')
+var mesasEscrutadas = document.getElementById('mesas-escrutadas')
+var electores = document.getElementById('electores')
+var participacion = document.getElementById('participacion')
 const mensajeVerde = document.getElementsByClassName('mensaje-usuario-verde');
 const mensajeAmarillo = document.getElementsByClassName('mensaje-usuario-amarillo');
 const mensajeRojo = document.getElementsByClassName('mensaje-usuario-rojo');
@@ -118,8 +118,15 @@ distritosSelect.addEventListener("change", cargarSecciones);
 //FUNCION CARGAR AÑOS
 cargarAños();
 
-//BOTON FILTRAR
 
+//CAMBIO DE NUMEROS JAJA LOL
+
+async function cambioPorcentaje() {
+    document.getElementById("participacion-num").innerHTML = 'Participacion Sobre Escrutado <br>' + participacion + '%'
+    document.getElementById("mesasEscrutadas-num").innerHTML = 'Mesas Escrutadas <br>' + mesasEscrutadas
+    document.getElementById("electores-num").innerHTML = 'Electores <br>' + electores
+}
+//BOTON FILTRAR
 async function filtrarDatos() {
   
   var anioEleccion = periodosSelect.value;
@@ -173,12 +180,19 @@ async function filtrarDatos() {
       "Participacion sobre escrutado:",
       participacion
     );
-
+    
+    cambioPorcentaje()
     
     console.log("Resultados obtenidos: ", data);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    console.log(`Error: ${error.message}`);
+    
   }
 }
 
+
+
 const filtrar = document.getElementById("filtrar");
+
+
+
