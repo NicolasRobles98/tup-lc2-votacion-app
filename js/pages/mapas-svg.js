@@ -1,8 +1,8 @@
 const provinciasIds = [
-    "Ciudad Autónoma de Buenos Aires",
+    "Ciudad Autonoma de Buenos Aires",
     "Buenos Aires",
     "Catamarca",
-    "Córdoba",
+    "Cordoba",
     "Corrientes",
     "Chaco",
     "Chubut",
@@ -13,13 +13,13 @@ const provinciasIds = [
     "La Rioja",
     "Mendoza",
     "Misiones",
-    "Neuquén",
+    "Neuquen",
     "Salta",
     "San Juan",
     "San Luis",
     "Santa Cruz",
     "Santa Fe",
     "Santiago del Estero",
-    "Tucumán"
+    "Tucuman"
   ];
   
