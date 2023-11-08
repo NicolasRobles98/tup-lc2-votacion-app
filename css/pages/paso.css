@@ -596,3 +596,8 @@ h3 {
 }
 
 /*fin footer*/
+
+/*display mensaje usuario*/
+.display-none{
+    display: none !important; 
+}

@@ -10,14 +10,14 @@ const hdSeccionSelect = document.getElementById("hdSeccionProvincial");
 var mesasEscrutadas = document.getElementById('mesas-escrutadas')
 var electores = document.getElementById('electores')
 var participacion = document.getElementById('participacion')
-const mensajeVerde = document.getElementById('mensaje-usuario-verde');
-const mensajeAmarillo = document.getElementById('mensaje-usuario-amarillo');
-const mensajeRojo = document.getElementById('mensaje-usuario-rojo');
+const mensajeVerde = document.getElementById('mensaje-usuario-verde1');
+const mensajeAmarillo = document.getElementById('mensaje-usuario-amarillo1');
+const mensajeRojo = document.getElementById('mensaje-usuario-rojo1');
 
-//MENSAJES DE USUARIO
-mensajeVerde.style.display = 'none'
-mensajeRojo.style.display = 'none'
-mensajeAmarillo.style.display = 'none'
+mensajeAmarillo.style.display = 'block'
+mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR"
+
+
 
 //COMBO AÑOS
 
@@ -124,7 +124,7 @@ distritosSelect.addEventListener("change", cargarSecciones);
 cargarAños();
 
 
-//CAMBIO DE NUMEROS JAJA LOL
+//CAMBIO DE NUMEROS 
 
 async function cambioPorcentaje() {
     document.getElementById("participacion-num").innerHTML = 'Participacion Sobre Escrutado <br>' + participacion + '%'
@@ -134,7 +134,7 @@ async function cambioPorcentaje() {
 
 //MENSAJES USUARIO
 
-
+//function mostrarMensajeError(){}
 //BOTON FILTRAR
 async function filtrarDatos() {
   
@@ -190,11 +190,20 @@ async function filtrarDatos() {
       participacion
     );
     
+    mensaje = document.getElementById("mensaje-usuario-rojo1")
+    mensaje2 = document.getElementById("mensaje-usuario-amarillo1")
+
+    if (mensaje.classList.contains("display-none") && periodosSelect.value != 0 && cargosSelect.value != 0 && seccionSelect.value != 0 && distritosSelect.value != 0){
+        mensaje.classList.remove("display-none")
+        mensaje2.classList.add("display-none")
+    }
+
     cambioPorcentaje()
     
     console.log("Resultados obtenidos: ", data);
   } catch (error) {
     console.log(`Error: ${error.message}`);
+    //mostrarMensajeError()
   }
 }
 
