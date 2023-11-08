@@ -203,9 +203,11 @@ async function filtrarDatos() {
     mensaje = document.getElementById("mensaje-usuario-rojo1")
     mensaje2 = document.getElementById("mensaje-usuario-amarillo1")
 
-    if (mensaje.classList.contains("display-none") && periodosSelect.value != 0 && cargosSelect.value != 0 && seccionSelect.value != 0 && distritosSelect.value != 0){
+    if (mensaje.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "Seccion" || distritosSelect.value == "Distrito"){
         mensaje.classList.remove("display-none")
-        mensaje2.classList.add("display-none")
+        
+    } else{
+        mensaje2.style.display = "none"
     }
 
     cambioImagen()
