@@ -10,9 +10,14 @@ const hdSeccionSelect = document.getElementById("hdSeccionProvincial");
 var mesasEscrutadas = document.getElementById('mesas-escrutadas')
 var electores = document.getElementById('electores')
 var participacion = document.getElementById('participacion')
-const mensajeVerde = document.getElementsByClassName('mensaje-usuario-verde');
-const mensajeAmarillo = document.getElementsByClassName('mensaje-usuario-amarillo');
-const mensajeRojo = document.getElementsByClassName('mensaje-usuario-rojo');
+const mensajeVerde = document.getElementById('mensaje-usuario-verde');
+const mensajeAmarillo = document.getElementById('mensaje-usuario-amarillo');
+const mensajeRojo = document.getElementById('mensaje-usuario-rojo');
+
+//MENSAJES DE USUARIO
+mensajeVerde.style.display = 'none'
+mensajeRojo.style.display = 'none'
+mensajeAmarillo.style.display = 'none'
 
 //COMBO AÑOS
 
@@ -126,6 +131,10 @@ async function cambioPorcentaje() {
     document.getElementById("mesasEscrutadas-num").innerHTML = 'Mesas Escrutadas <br>' + mesasEscrutadas
     document.getElementById("electores-num").innerHTML = 'Electores <br>' + electores
 }
+
+//MENSAJES USUARIO
+
+
 //BOTON FILTRAR
 async function filtrarDatos() {
   
@@ -186,7 +195,6 @@ async function filtrarDatos() {
     console.log("Resultados obtenidos: ", data);
   } catch (error) {
     console.log(`Error: ${error.message}`);
-    
   }
 }
 
