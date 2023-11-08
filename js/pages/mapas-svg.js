@@ -1,0 +1,27 @@
+const provinciasIds = [
+    "Ciudad Autonoma de Buenos Aires",
+    "Buenos Aires",
+    "Catamarca",
+    "Cordoba",
+    "Corrientes",
+    "Chaco",
+    "Chubut",
+    "Entre Rios",
+    "Formosa",
+    "Jujuy",
+    "La Pampa",
+    "La Rioja",
+    "Mendoza",
+    "Misiones",
+    "Neuquen",
+    "Rio Negro",
+    "Salta",
+    "San Juan",
+    "San Luis",
+    "Santa Cruz",
+    "Santa Fe",
+    "Santiago del Estero",
+    "Tucuman",
+    "Tierra del Fuego Antartida e Islas del Atlantico Sur"
+  ];
+  
