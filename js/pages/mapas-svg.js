@@ -14,12 +14,14 @@ const provinciasIds = [
     "Mendoza",
     "Misiones",
     "Neuquen",
+    "Rio Negro",
     "Salta",
     "San Juan",
     "San Luis",
     "Santa Cruz",
     "Santa Fe",
     "Santiago del Estero",
-    "Tucuman"
+    "Tucuman",
+    "Tierra del Fuego Antartida e Islas del Atlantico Sur"
   ];
   
