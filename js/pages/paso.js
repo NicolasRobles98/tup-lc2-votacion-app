@@ -1,5 +1,6 @@
-//VARIABLES 
 
+
+//VARIABLES 
 const tipoEleccion = 1;
 const tipoRecuento = 1;
 const periodosSelect = document.getElementById("anio");
@@ -64,6 +65,7 @@ async function cargarDistritos() {
     if (cargoSeleccionado && añoSeleccionado) {
         const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + periodosSelect.value);
         const datos = await response.json();
+        
 
         distritosSelect.innerHTML = '<option value="">Distrito</option>';
 
@@ -86,6 +88,7 @@ async function cargarSecciones() {
     const añoSeleccionado = periodosSelect.value;
     const cargoSeleccionado = cargosSelect.value;
     const distritoSeleccionado = distritosSelect.value;
+    
 
     if (distritoSeleccionado && cargoSeleccionado && añoSeleccionado) {
         const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + periodosSelect.value);
@@ -135,6 +138,13 @@ async function cambioPorcentaje() {
 //MENSAJES USUARIO
 
 //function mostrarMensajeError(){}
+
+async function cambioImagen(){
+    var distrito = distritosSelect.value
+    var imgMap = document.getElementById("imagen-mapa")
+    imgMap.innerHTML = provinciasIds[distrito]
+}
+
 //BOTON FILTRAR
 async function filtrarDatos() {
   
@@ -198,6 +208,7 @@ async function filtrarDatos() {
         mensaje2.classList.add("display-none")
     }
 
+    cambioImagen()
     cambioPorcentaje()
     
     console.log("Resultados obtenidos: ", data);
