@@ -1,221 +1,184 @@
+//VARIABLES 
+
 const tipoEleccion = 1;
 const tipoRecuento = 1;
+const periodosSelect = document.getElementById("anio");
+const cargosSelect = document.getElementById("cargo");
+const distritosSelect = document.getElementById("distrito");
+const seccionSelect = document.getElementById("seccion");
+const hdSeccionSelect = document.getElementById("hdSeccionProvincial");
+const mesasEscrutadas = document.getElementById('mesas-escrutadas')
+const electores = document.getElementById('electores')
+const participacionEscrutado = document.getElementById('participacion')
+const mensajeVerde = document.getElementsByClassName('mensaje-usuario-verde');
+const mensajeAmarillo = document.getElementsByClassName('mensaje-usuario-amarillo');
+const mensajeRojo = document.getElementsByClassName('mensaje-usuario-rojo');
 
-async function solicitarDatosApi() {
-    try { 
-        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu/periodos");
-        if (!response.ok) {
-            throw new Error("Error en la solicitud");
-        }
-        const años = await response.json();
-        return años; //Devolvemos los años de la api
-    } catch (error) {
-        console.error("Error en fetchDatos:", error);
-        throw error; //Mostramos mensaje de error por si la api no funciona ese dia
-    }
-}
+//COMBO AÑOS
 
-function cargarAños(años) {
-    var selectElement = document.getElementById("anio");
+async function cargarAños() {
+    const response = await fetch("https://resultados.mininterior.gob.ar/api/menu/periodos");
+    const años = await response.json();
 
-    let selectHTML = '<option value="0">Año</option>';
-
-    selectHTML += años.map(año => {
-        return `<option value="${año}">${año}</option>`;
-    }).join('');
-
-    selectElement.innerHTML = selectHTML;
-}
-
-
-solicitarDatosApi()
-    .then(años => {
-        cargarAños(años);
-    })
-    .catch(error => {
-        console.error("Error:", error);
+    años.forEach(año => {
+        const option = document.createElement("option");
+        option.value = año;
+        option.text = año;
+        periodosSelect.appendChild(option);
     });
+}
 
+//COMBO CARGOS
 
+async function cargarCargos() {
+    const añoSeleccionado = periodosSelect.value;
 
-function seleccionAño() {
-    var selectElement = document.getElementById("anio");
-    var selectedValue = selectElement.value;
+    if (añoSeleccionado) {
+        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + añoSeleccionado);
+        const datos = await response.json();
 
-    console.log(selectedValue);
+        cargosSelect.innerHTML = '<option value="">Cargo</option>';
+            
+            datos[tipoEleccion].Cargos.forEach(cargo => {
+                const option = document.createElement("option");
+                option.value = cargo.IdCargo;
+                option.text = cargo.Cargo;
+                cargosSelect.appendChild(option);
+            
+            });
+        
+    };
+}
 
-    if (selectedValue && selectedValue != 0) { 
-        fetchCargos(selectedValue); 
+//COMBO DISTRITOS
+
+async function cargarDistritos() {
+    const cargoSeleccionado = cargosSelect.value;
+    const añoSeleccionado = periodosSelect.value;
+
+    if (cargoSeleccionado && añoSeleccionado) {
+        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + periodosSelect.value);
+        const datos = await response.json();
+
+        distritosSelect.innerHTML = '<option value="">Distrito</option>';
+
+            datos[tipoEleccion].Cargos.forEach(cargo => {
+                if (cargo.IdCargo === cargoSeleccionado) {
+                    cargo.Distritos.forEach(distrito => {
+                        const option = document.createElement("option");
+                        option.value = distrito.IdDistrito;
+                        option.text = distrito.Distrito;
+                        distritosSelect.appendChild(option);
+                    });
+                }
+            });
     }
 }
 
+//COMBO SECCIONES
 
+async function cargarSecciones() {
+    const añoSeleccionado = periodosSelect.value;
+    const cargoSeleccionado = cargosSelect.value;
+    const distritoSeleccionado = distritosSelect.value;
 
-async function fetchCargos(selectedValue) {
-    console.log(tipoEleccion);
-    try {
-        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + selectedValue);
-        if (!response.ok) {
-            throw new Error("Error en la solicitud");
-        }
+    if (distritoSeleccionado && cargoSeleccionado && añoSeleccionado) {
+        const response = await fetch("https://resultados.mininterior.gob.ar/api/menu?año=" + periodosSelect.value);
+        const datos = await response.json();
 
-        var data = await response.json();  
-        data = data[tipoEleccion] 
+        seccionSelect.innerHTML = '<option value="">Sección</option>';
 
-        cargarCargos(data);
+            datos[tipoEleccion].Cargos.forEach(cargo => {
+                if (cargo.IdCargo === cargoSeleccionado) {
+                    cargo.Distritos.forEach(distrito => {
+                        if (distrito.IdDistrito == distritoSeleccionado) {
+                                distrito.SeccionesProvinciales.forEach(seccionesProvinciales => {
+                                hdSeccionSelect.value = seccionesProvinciales.IDSeccionProvincial;
+                                seccionesProvinciales.Secciones.forEach(seccion =>{
+                                const option = document.createElement("option");
+                                option.value = seccion.IdSeccion;
+                                option.text = seccion.Seccion;
+                                seccionSelect.appendChild(option);} );
+                            });
+                        }
+                    });
+                }
+            });
 
-    } catch (error) {
-        console.error("Error en fetchCargos:", error);
+        
     }
 }
 
-var datosCargosYDistritos;
+//COMBO EVENTOS
 
+periodosSelect.addEventListener("change", cargarCargos);
+cargosSelect.addEventListener("change", cargarDistritos);
+distritosSelect.addEventListener("change", cargarSecciones);
 
-function cargarCargos(data) {
-    var selectElement = document.getElementById("cargo");
-    let selectHTML = '<option value="0">Cargo</option>';
+//FUNCION CARGAR AÑOS
+cargarAños();
 
-    datosCargosYDistritos = data 
-    var cargosAMostrar = [] 
+//BOTON FILTRAR
 
-    cargosAMostrar = data.Cargos.map((dato) => { 
-        return dato.Cargo;
-    })
-    console.log(cargosAMostrar)
+async function filtrarDatos() {
+  
+  var anioEleccion = periodosSelect.value;
+  var categoriaId = 2;
+  var distritoId = distritosSelect.value;
+  var seccionProvincialId = hdSeccionSelect.value == "null" ? "" : hdSeccionSelect.value;
+  var seccionId = seccionSelect.value;
+  var circuitoId = "";
+  var mesaId = "";
 
-    selectHTML += cargosAMostrar.map(cargo => {
-        return `<option value="${cargo}">${cargo}</option>`;
-    }).join('');
+  console.log(
+    "Año:",
+    anioEleccion,
+    "Categoria:",
+    categoriaId,
+    "Tipo de elección:",
+    tipoEleccion,
+    "Tipo de recuento:",
+    tipoRecuento,
+    "ID Distrito:",
+    distritoId,
+    "ID Sección Provincial:",
+    seccionProvincialId,
+    "ID Sección:",
+    seccionId
+  );
 
-    selectElement.innerHTML = selectHTML;
-}
+  
+  let url = `https://resultados.mininterior.gob.ar/api/resultados/getResultados?anioEleccion=${anioEleccion}&tipoRecuento=${tipoRecuento}&tipoEleccion=${tipoEleccion}&categoriaId=${categoriaId}&distritoId=${distritoId}&seccionProvincialId=${seccionProvincialId}&seccionId=${seccionId}&circuitoId=${circuitoId}&mesaId=${mesaId}`;
 
+  try {
+    const response = await fetch(url);
 
-var arrayAñoMasCargo;
+    if (!response.ok) {
+      throw new Error("Error en la solicitud");
+    }
 
-function cargoSeleccionado() {
+    const data = await response.json();
+
     
-    arrayAñoMasCargo = datosCargosYDistritos.Cargos;
-    console.log(arrayAñoMasCargo);
-    var selectElement = document.getElementById("cargo");
-    var selectedValue = selectElement.value;
+    mesasEscrutadas = data.estadoRecuento.mesasTotalizadas;
+    electores = data.estadoRecuento.cantidadElectores;
+    participacion = data.estadoRecuento.participacionPorcentaje;
+    valoresTotalizadosPositivos = data.valoresTotalizadosPositivos;
 
-    console.log(selectedValue)
-    if (selectedValue != 0 && selectedValue) {
-        var arrayFiltrado = arrayAñoMasCargo.filter(obj => obj.Cargo === selectedValue);
-        arrayAñoMasCargo = arrayFiltrado
-        console.log(arrayAñoMasCargo)
+    console.log(
+      "Mesas totalizadas:",
+      mesasEscrutadas,
+      "Electores:",
+      electores,
+      "Participacion sobre escrutado:",
+      participacion
+    );
 
-        var arrayDistritos = arrayFiltrado[0].Distritos.map(obj => obj.Distrito);
-
-        console.log(arrayDistritos);
-
-        mostrarDistritos(arrayDistritos);
-
-    }
-
-}
-
-
-function mostrarDistritos(arrayDistritos) {
-
-    var selectElement = document.getElementById("distrito");
-
-    let selectHTML = '<option value="0">Distrito</option>';
-
-    selectHTML += arrayDistritos.map(distrito => {
-        return `<option value="${distrito}">${distrito}</option>`;
-    }).join('');
-
-    selectElement.innerHTML = selectHTML;
-
-}
-
-var seccionesAMostrar;
-
-function distritoSeleccionado() {
     
-    var selectElement = document.getElementById("distrito");
-    var selectedValue = selectElement.value;
-    console.log(selectedValue);
-
-    console.log(arrayAñoMasCargo);
-
-    seccionesAMostrar = arrayAñoMasCargo[0].Distritos.find(obj => obj.Distrito === selectedValue);
-
-    if (seccionesAMostrar) {
-        seccionesAMostrar = seccionesAMostrar.SeccionesProvinciales[0].Secciones;
-    }
-
-    mostrarSecciones(seccionesAMostrar);
+    console.log("Resultados obtenidos: ", data);
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+  }
 }
 
-
-
-function mostrarSecciones(seccionesAMostrar) {
-    var selectElement = document.getElementById("seccion");
-
-    let selectHTML = '<option value="0">Sección</option>';
-
-    selectHTML += seccionesAMostrar.map(seccion => {
-        return `<option value="${seccion.IdSeccion}">${seccion.Seccion}</option>`;
-    }).join('');
-
-    selectElement.innerHTML = selectHTML;
-}
-
-function seccionSeleccionada() {
-    var selectElement = document.getElementById("seccion");
-    var selectedValue = selectElement.value;
-    console.log(selectedValue);
-
-
-    if (selectedValue != 0 && selectedValue) {
-        var distritoSeleccionado = arrayAñoMasCargo[0].Distritos.find(obj => obj.Distrito === selectedValue);
-
-        if (distritoSeleccionado) {
-            var seccionesFiltradas = distritoSeleccionado.SeccionesProvinciales[0].Secciones;
-            mostrarSecciones(seccionesFiltradas);
-
-            console.log(seccionesFiltradas);
-        }
-    }
-}
-
-
-
-const Anio = document.getElementById("anio");
-const Cargo = document.getElementById("cargo");
-const Distrito = document.getElementById("distrito");
-const Seccion = document.getElementById("seccion");
-
-//Tambien podemos usar Onload para que se actualize al seleccionar todos los campos
-//Solo se actualizara al seleccionar todos
-//Si usamos onchange al seleccionar el año el subtitulo de color azul nos muestra el indice 0 en todos los campos incompletos
-//Ej: 2019 > Paso > 0 > 0 > 0 > 
-
-Anio.addEventListener("change", actualizarDatos);
-Cargo.addEventListener("change", actualizarDatos);
-Distrito.addEventListener("change", actualizarDatos);
-Seccion.addEventListener("change", actualizarDatos);
-
-
-function actualizarDatos() {
-    
-    const anio = Anio.value;
-    const tipoEleccion = "Paso"; 
-    const cargo = Cargo.value;
-    const distrito = Distrito.value;
-    const seccion = Seccion.value;
-
-   
-    const titulo = document.getElementById("titulo");
-    const subtitulo = document.getElementById("subtitulo");
-
-    titulo.innerText = `Elecciones ${anio} | ${tipoEleccion}`;
-    subtitulo.innerText = `${anio} > ${tipoEleccion} > ${cargo} > ${distrito} > ${seccion}`;
-}
-
-
-
+const filtrar = document.getElementById("filtrar");
