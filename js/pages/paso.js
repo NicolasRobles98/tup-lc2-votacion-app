@@ -205,7 +205,7 @@ async function filtrarDatos() {
 
     if (mensaje.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "Seccion" || distritosSelect.value == "Distrito"){
         mensaje.classList.remove("display-none")
-        
+        mensaje2.classList.add("display-none")
     } else{
         mensaje2.style.display = "none"
     }
