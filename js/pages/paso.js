@@ -139,9 +139,12 @@ async function cambioPorcentaje() {
 //function mostrarMensajeError(){}
 
 async function cambioImagen(){
+    var titulo = document.getElementById("titulo-mapa")
     var distrito = distritosSelect.value
     var imgMap = document.getElementById("imagen-mapa")
+    var indice = distritosSelect.value + 1
     imgMap.innerHTML = provinciasIds[distrito]
+    titulo.innerText = distritosSelect.options[distritosSelect.value].innerText
 }
 
 //BOTON FILTRAR
@@ -207,8 +210,11 @@ async function filtrarDatos() {
         mensaje2.classList.add("display-none")
     } else{
         mensaje2.style.display = "none"
+        mensaje.classList.add("display-none")
     }
 
+    cambiarTitulo()
+    cambiarSubtitulo()
     cambioImagen()
     cambioPorcentaje()
     
@@ -219,8 +225,20 @@ async function filtrarDatos() {
   }
 }
 
+async function cambiarTitulo() {
+    var titulo = document.getElementById("titulo")
+    var anio = periodosSelect.value
+    titulo.innerText = `Elecciones ${anio} | Paso`
+}
 
-
+async function cambiarSubtitulo(){
+    var subtitulo = document.getElementById("subtitulo")
+    var anio = periodosSelect.value
+    var distrito = distritosSelect.options[distritosSelect.value].innerText
+    var cargo = cargosSelect.options[cargosSelect.value].innerText
+    var seccion = seccionSelect.options[seccionSelect.value].innerText
+    subtitulo.innerText = `${anio} > Paso > Definitivo > ${cargo} > ${distrito} > ${seccion}`
+}
 const filtrar = document.getElementById("filtrar");
 
 /*ARRAY MAPAS*/
