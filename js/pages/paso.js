@@ -237,29 +237,33 @@ async function cambiarSubtitulo() {
 }
 
 async function agrupacionesPoliticas() {
+    var i = 0
+    var contenedor = document.getElementById("contenedor-barras");
+    contenedor.innerHTML = ""
     valoresTotalizadosPositivos.forEach(valores => {
-        var i = 0
+
+        var nombreAgrup = valores.nombreAgrupacion
+        var votosTotales = valores.votos
+        var barra = document.createElement("div")
+        barra.innerHTML = `<h3>${nombreAgrup}</h3>`
+        contenedor.appendChild(barra)
+
         valores.listas.forEach(lista => {
-            var nombre = lista.nombreAgrupacion
+
+            var nombre = lista.nombre
             var cantVotos = lista.votos
-            var porcentajeVotos = lista.votosPorcentaje
-            porcentajeVotos = porcentajeVotos * 100
-            var barra = document.createElement("div")
-            barra.innerHTML = `
-            <div class="contenido-recuadro">
-                <h3>${nombre}</h3>
-                <div>
-                    <p id="votosPorcentaje">${porcentajeVotos}%</p>
-                    <p id="votos">${cantVotos}</p>
+            var porcentajeVotos = cantVotos * 100 / votosTotales
+            porcentajeVotos = porcentajeVotos.toFixed(2)
+            barra.innerHTML = barra.innerHTML + `
+                <h5>${nombre}</h5>
+                <p>${porcentajeVotos}%</p>
+                <p>${cantVotos}</p>
+            <div class="progress" style="background: ${agrupacionesColores[i]?.colorLiviano || "grey"}; ">
+                <div class="progress-bar" style = "width:${porcentajeVotos}%; background: ${agrupacionesColores[i]?.colorPleno || "black"};" >
+                    <span class="progress-bar-text">${porcentajeVotos}%</span>
                 </div>
-            </div>
-            <div class="progress" style="background: ${agrupacionesColores[i]?.colorLiviano || "grey"
-                }; ">
-            < div class="progress-bar"
-        style = "width:${porcentajeVotos}%; background: ${agrupacionesColores[i]?.colorPleno || "black"};" >
-            <span class="progress-bar-text">${porcentajeVotos}%</span>
-                </div >
-            </div >`
+            </div>`
+            contenedor.appendChild(barra)
             i += 1
         })
     })
@@ -386,14 +390,14 @@ const provinciasIds = [
 ];
 
 const agrupacionesColores = {
-    '0': { colorPleno: "var(--grafica-amarillo)", colorLiviano: "var(--grafica-amarillo-claro)" },
-    '1': { colorPleno: "var(--grafica-celeste-claro)", colorLiviano: "var(--grafica-celeste:)" },
-    '2': { colorPleno: "var(--grafica-lila-claro)", colorLiviano: "var(--grafica-lila)" },
-    '3': { colorPleno: "var(--grafica-bordo-claro)", colorLiviano: "var(--grafica-bordo)" },
-    '4': { colorPleno: "var(--grafica-verde-claro)", colorLiviano: "var(--grafica-verde)" },
-    '5': { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
-    '6': { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
-    '7': { colorPleno: "var(--grafica-violeta)", colorLiviano: "var(--grafica-violeta-claro)" },
-    '8': { colorPleno: "var(--grafica-azul-fuerte)", colorLiviano: "var(--grafica-azul)" },
+    0: { colorPleno: "var(--grafica-amarillo)", colorLiviano: "var(--grafica-amarillo-claro)" },
+    1: { colorPleno: "var(--grafica-celeste)", colorLiviano: "var(--grafica-celeste-claro)" },
+    2: { colorPleno: "var(--grafica-lila)", colorLiviano: "var(--grafica-lila-claro)" },
+    3: { colorPleno: "var(--grafica-bordo)", colorLiviano: "var(--grafica-bordo-claro)" },
+    4: { colorPleno: "var(--grafica-verde-claro)", colorLiviano: "var(--grafica-verde)" },
+    5: { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
+    6: { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
+    7: { colorPleno: "var(--grafica-violeta)", colorLiviano: "var(--grafica-violeta-claro)" },
+    8: { colorPleno: "var(--grafica-azul-fuerte)", colorLiviano: "var(--grafica-azul)" },
 
 }
