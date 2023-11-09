@@ -62,7 +62,7 @@ h2 {
     padding: 2em;
 }
 
-.header-color{
+.header-color {
     background-color: var(--fondo-Cabecera);
 }
 
@@ -134,7 +134,7 @@ h2 {
     margin-right: 10px;
 }
 
-.boton-nav{
+.boton-nav {
     padding-top: 9px !important;
 }
 
@@ -181,7 +181,7 @@ h2 {
     border-radius: 10px;
 }
 
-.mensaje-usuario p {
+.mensaje-usuario  {
     font-size: 12px;
     font-weight: 200;
     text-align: center;
@@ -587,3 +587,8 @@ h2 {
 }
 
 /*fin footer*/
+
+/*display mensaje usuario*/
+.display-none {
+    display: none !important;
+}
