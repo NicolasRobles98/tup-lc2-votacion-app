@@ -17,6 +17,7 @@ mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer cl
 
 
 
+
 //COMBO AÑOS
 
 async function cargarAños() {
@@ -114,6 +115,9 @@ async function cargarSecciones() {
 
     }
 }
+
+//FUNCION CARGAR AÑOS
+cargarAños();
 
 //COMBO EVENTOS
 

@@ -117,6 +117,8 @@ async function cargarSecciones() {
     }
 }
 
+//FUNCION CARGAR AÑOS
+cargarAños();
 //COMBO EVENTOS
 
 periodosSelect.addEventListener("change", cargarCargos);
