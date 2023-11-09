@@ -33,6 +33,14 @@ body {
     --grafica-gris-claro: rgb(128, 128, 128, 0.5);
     --grafica-verde: rgb(102, 171, 60);
     --grafica-verde-claro: rgba(102, 171, 60, 0.5);
+    --grafica-anaranjado: rgb(182, 76, 0);
+    --grafica-anaranjado-claro: rgb(255, 163, 57);
+    --grafica-rojo: rgb(255, 0, 0);
+    --grafica-rojo-claro: rgb(255, 134, 134);
+    --grafica-violeta: rgb(169, 0, 226);
+    --grafica-violeta-claro: rgb(215, 105, 252);
+    --grafica-azul-fuerte: rgb(4, 0, 255);
+    --grafica-azul: rgb(0, 132, 255);
     --mensaje-usuario-amarillo: #ffc107;
     --mensaje-usuario-verde: #28a745;
     --mensaje-usuario-rojo: #dc3545;
