@@ -361,7 +361,7 @@ const agrupacionesColores = {
     '0': { colorPleno: "var(--grafica-amarillo)", colorLiviano: "var(--grafica-amarillo-claro)" },
     '1': { colorPleno: "var(--grafica-celeste-claro)", colorLiviano: "var(--grafica-celeste:)" },
     '2': { colorPleno: "var(--grafica-lila-claro)", colorLiviano: "var(--grafica-lila)" },
-    '3': { colorPleno: "var(--grafica-bordo-claro)", colorLiviano: "var(--grafica-amarillo-claro)" },
+    '3': { colorPleno: "var(--grafica-bordo-claro)", colorLiviano: "var(--grafica-bordo)" },
     '4': { colorPleno: "var(--grafica-verde-claro)", colorLiviano: "var(--grafica-verde)" },
     '5': { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
     '6': { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
