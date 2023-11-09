@@ -269,6 +269,11 @@ async function agrupacionesPoliticas() {
     })
 }
 
+async function resumenVotos(){
+    
+}
+
+
 function agregarInforme() {
 
     // Obtener los valores seleccionados por el usuario (reemplaza esto con tu lógica)
