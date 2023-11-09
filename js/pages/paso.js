@@ -7,15 +7,15 @@ var cargosSelect = document.getElementById("cargo");
 var distritosSelect = document.getElementById("distrito");
 var seccionSelect = document.getElementById("seccion");
 var hdSeccionSelect = document.getElementById("hdSeccionProvincial");
-var mesasEscrutadas = document.getElementById('mesas-escrutadas')
-var electores = document.getElementById('electores')
-var participacion = document.getElementById('participacion')
+var mesasEscrutadas = document.getElementById('mesas-escrutadas');
+var electores = document.getElementById('electores');
+var participacion = document.getElementById('participacion');
 const mensajeVerde = document.getElementById('mensaje-usuario-verde1');
 const mensajeAmarillo = document.getElementById('mensaje-usuario-amarillo1');
 const mensajeRojo = document.getElementById('mensaje-usuario-rojo1');
-
-mensajeAmarillo.style.display = 'block'
-mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR"
+var valoresTotalizadosPositivos;
+mensajeAmarillo.style.display = 'block';
+mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR";
 
 
 
@@ -209,7 +209,7 @@ async function filtrarDatos() {
             cambiarSubtitulo()
             cambioImagen()
             cambioPorcentaje()
-            
+            agrupacionesPoliticas()
         }
 
 
@@ -236,6 +236,34 @@ async function cambiarSubtitulo() {
     subtitulo.innerText = `${anio} > Paso > Definitivo > ${cargo} > ${distrito} > ${seccion}`
 }
 
+async function agrupacionesPoliticas() {
+    valoresTotalizadosPositivos.forEach(valores => {
+        var i = 0
+        valores.listas.forEach(lista => {
+            var nombre = lista.nombreAgrupacion
+            var cantVotos = lista.votos
+            var porcentajeVotos = lista.votosPorcentaje
+            porcentajeVotos = porcentajeVotos * 100
+            var barra = document.createElement("div")
+            barra.innerHTML = `
+            <div class="contenido-recuadro">
+                <h3>${nombre}</h3>
+                <div>
+                    <p id="votosPorcentaje">${porcentajeVotos}%</p>
+                    <p id="votos">${cantVotos}</p>
+                </div>
+            </div>
+            <div class="progress" style="background: ${agrupacionesColores[i]?.colorLiviano || "grey"
+                }; ">
+            < div class="progress-bar"
+        style = "width:${porcentajeVotos}%; background: ${agrupacionesColores[i]?.colorPleno || "black"};" >
+            <span class="progress-bar-text">${porcentajeVotos}%</span>
+                </div >
+            </div >`
+            i += 1
+        })
+    })
+}
 
 function agregarInforme() {
 
@@ -248,10 +276,10 @@ function agregarInforme() {
     let vSeccionProvincial = hdSeccionSelect.value == "null" ? "" : hdSeccionSelect.value;
     let vSeccionID = seccionSelect.value;
 
-    
+
 
     // Construir la cadena del nuevo registro
-    let nuevoRegistro = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionID}`;
+    let nuevoRegistro = `${vAnio}| ${vTipoRecuento}| ${vTipoEleccion}| ${vCategoriaId}| ${vDistrito}| ${vSeccionProvincial}| ${vSeccionID} `;
 
     // Obtener los informes existentes desde LocalStorage
     let informesGuardados = localStorage.getItem('INFORMES');
