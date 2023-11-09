@@ -2,11 +2,11 @@
 //VARIABLES 
 const tipoEleccion = 1;
 const tipoRecuento = 1;
-const periodosSelect = document.getElementById("anio");
-const cargosSelect = document.getElementById("cargo");
-const distritosSelect = document.getElementById("distrito");
-const seccionSelect = document.getElementById("seccion");
-const hdSeccionSelect = document.getElementById("hdSeccionProvincial");
+var periodosSelect = document.getElementById("anio");
+var cargosSelect = document.getElementById("cargo");
+var distritosSelect = document.getElementById("distrito");
+var seccionSelect = document.getElementById("seccion");
+var hdSeccionSelect = document.getElementById("hdSeccionProvincial");
 var mesasEscrutadas = document.getElementById('mesas-escrutadas')
 var electores = document.getElementById('electores')
 var participacion = document.getElementById('participacion')
@@ -142,9 +142,8 @@ async function cambioImagen(){
     var titulo = document.getElementById("titulo-mapa")
     var distrito = distritosSelect.value
     var imgMap = document.getElementById("imagen-mapa")
-    var indice = distritosSelect.value + 1
     imgMap.innerHTML = provinciasIds[distrito]
-    titulo.innerText = distritosSelect.options[distritosSelect.value].innerText
+    titulo.innerText = distritosSelect.options[distritosSelect.selectedIndex].text
 }
 
 //BOTON FILTRAR
@@ -234,9 +233,9 @@ async function cambiarTitulo() {
 async function cambiarSubtitulo(){
     var subtitulo = document.getElementById("subtitulo")
     var anio = periodosSelect.value
-    var distrito = distritosSelect.options[distritosSelect.value].innerText
-    var cargo = cargosSelect.options[cargosSelect.value].innerText
-    var seccion = seccionSelect.options[seccionSelect.value].innerText
+    var distrito = distritosSelect.options[distritosSelect.selectedIndex].text
+    var cargo = cargosSelect.options[cargosSelect.selectedIndex].text
+    var seccion = seccionSelect.options[seccionSelect.selectedIndex].text
     subtitulo.innerText = `${anio} > Paso > Definitivo > ${cargo} > ${distrito} > ${seccion}`
 }
 const filtrar = document.getElementById("filtrar");
