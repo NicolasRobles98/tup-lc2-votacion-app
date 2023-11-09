@@ -399,7 +399,7 @@ const agrupacionesColores = {
     1: { colorPleno: "var(--grafica-celeste)", colorLiviano: "var(--grafica-celeste-claro)" },
     2: { colorPleno: "var(--grafica-lila)", colorLiviano: "var(--grafica-lila-claro)" },
     3: { colorPleno: "var(--grafica-bordo)", colorLiviano: "var(--grafica-bordo-claro)" },
-    4: { colorPleno: "var(--grafica-verde-claro)", colorLiviano: "var(--grafica-verde)" },
+    4: { colorPleno: "var(--grafica-verde)", colorLiviano: "var(--grafica-verde-claro)" },
     5: { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
     6: { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
     7: { colorPleno: "var(--grafica-violeta)", colorLiviano: "var(--grafica-violeta-claro)" },
