@@ -384,3 +384,16 @@ const provinciasIds = [
     '<svg height="210" width="300" id="Tierra del Fuego Antartida e Islas del Atlantico Sur"><path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1" fill-rule="evenodd" d="M166 125L160 121L154 114L139 104L136 98L129 92L122 78L120 79L114 76L114 73L118 67L120 67L121 69L121 67L113 54L113 140L114 138L118 138L120 136L132 139L141 138L161 146L163 143L172 143L173 140L177 140L180 142L185 139L185 141L188 140L188 138L190 137L189 135L192 130L181 130L170 128L167 126z"></path></svg>'
 
 ];
+
+const agrupacionesColores = {
+    '0': { colorPleno: "var(--grafica-amarillo)", colorLiviano: "var(--grafica-amarillo-claro)" },
+    '1': { colorPleno: "var(--grafica-celeste-claro)", colorLiviano: "var(--grafica-celeste:)" },
+    '2': { colorPleno: "var(--grafica-lila-claro)", colorLiviano: "var(--grafica-lila)" },
+    '3': { colorPleno: "var(--grafica-bordo-claro)", colorLiviano: "var(--grafica-bordo)" },
+    '4': { colorPleno: "var(--grafica-verde-claro)", colorLiviano: "var(--grafica-verde)" },
+    '5': { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
+    '6': { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
+    '7': { colorPleno: "var(--grafica-violeta)", colorLiviano: "var(--grafica-violeta-claro)" },
+    '8': { colorPleno: "var(--grafica-azul-fuerte)", colorLiviano: "var(--grafica-azul)" },
+
+}
