@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css\pages\informes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/pages/informes.js"></script>
 </head>
 
 <body>
@@ -28,15 +29,15 @@
             </ul>
         </nav>
     </header>
-    <div class="mensaje-usuario mensaje-usuario-verde">
+    <div id="mensaje-usuario-verde1" class="mensaje-usuario mensaje-usuario-verde display-none">
         <p><i class="fas fa-thumbs-up"></i>Se agregó con éxito el resultado al informe.</p>
     </div>
     
-    <div class="mensaje-usuario mensaje-usuario-rojo">
+    <div id="mensaje-usuario-rojo1" class="mensaje-usuario mensaje-usuario-rojo display-none">
         <p><i class="fas fa-exclamation-triangle"></i>Error: Se produjo un error al intentar agregar resultados al informe.</p>
     </div>
     
-    <div class="mensaje-usuario mensaje-usuario-amarillo">
+    <div id="mensaje-usuario-amarillo1" class="mensaje-usuario mensaje-usuario-amarillo display-none">
         <p><i class="fas fa-exclamation"></i>La operación no se pudo completar.</p>
     </div>
     <h1>Reporte de Elecciones</h1>

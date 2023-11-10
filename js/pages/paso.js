@@ -314,7 +314,9 @@ function agregarInforme() {
         } else {
         
             informesGuardados = informesGuardados.split(';');
+            console.log(informesGuardados)
         }
+        console.log(informesGuardados)
 
     
         if (informesGuardados.includes(nuevoRegistro)) {
@@ -334,11 +336,15 @@ function agregarInforme() {
             mensajeVerde.classList.remove("display-none")
             mensajeRojo.classList.add("display-none")
         }
+        console.log(informesGuardados)
+
     } else {
         mensajeAmarillo.innerText = "Seleccione todos los valores antes de presionar el boton."
         mensajeAmarillo.classList.remove("display-none")
     }
 }
+
+
 
 
 

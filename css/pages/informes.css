@@ -341,3 +341,8 @@ td {
     color: var(--texto-footer);
     text-decoration: underline;
 }
+
+/* /display mensaje usuario/ */
+.display-none {
+    display: none !important;
+}
