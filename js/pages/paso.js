@@ -201,7 +201,7 @@ async function filtrarDatos() {
         if (mensajeRojo.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "" || distritosSelect.value == "Distrito" || distritosSelect.value == "") {
             mensajeRojo.classList.remove("display-none")
             mensajeAmarillo.classList.add("display-none")
-
+            mensajeVerde.classList.add("display-none")
         } else {
             mensajeAmarillo.style.display = "none"
             mensajeRojo.classList.add("display-none")
@@ -210,6 +210,7 @@ async function filtrarDatos() {
             cambioImagen()
             cambioPorcentaje()
             agrupacionesPoliticas()
+            resumenVotos()
         }
 
 
@@ -270,13 +271,23 @@ async function agrupacionesPoliticas() {
 }
 
 async function resumenVotos(){
-    
+    cont = document.getElementById("barras")
+    cont.innerHTML = "";
+    var i = 0;
+    valoresTotalizadosPositivos.forEach(valores =>{
+        if (!(i == 7)){
+        var nombre = valores.nombreAgrupacion;
+        var votosPorcentaje = valores.votosPorcentaje;
+        cont.innerHTML = cont.innerHTML + `<div class="bar" id=${nombre} data-name="${nombre}" title="${nombre} ${votosPorcentaje}%" style="--bar-value:${votosPorcentaje}%; background-color:${agrupacionesColores[i].colorPleno};"></div>`
+        i += 1;
+        
+        }
+    })
 }
 
 
 function agregarInforme() {
 
-    // Obtener los valores seleccionados por el usuario (reemplaza esto con tu lógica)
     let vAnio = periodosSelect.value;
     let vTipoRecuento = tipoRecuento;
     let vTipoEleccion = tipoEleccion;
@@ -285,17 +296,13 @@ function agregarInforme() {
     let vSeccionProvincial = hdSeccionSelect.value == "null" ? "" : hdSeccionSelect.value;
     let vSeccionID = seccionSelect.value;
 
-
-
-    // Construir la cadena del nuevo registro
     let nuevoRegistro = `${vAnio}| ${vTipoRecuento}| ${vTipoEleccion}| ${vCategoriaId}| ${vDistrito}| ${vSeccionProvincial}| ${vSeccionID} `;
 
-    // Obtener los informes existentes desde LocalStorage
     let informesGuardados = localStorage.getItem('INFORMES');
 
 
     if (!(mensajeRojo.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "" || distritosSelect.value == "Distrito" || distritosSelect.value == "")) {
-        // Si no hay informes guardados, inicializar como un array vacío
+    
         periodosSelect.selectedIndex = 0
         cargosSelect.selectedIndex = 0
         distritosSelect.selectedIndex = 0
@@ -305,24 +312,22 @@ function agregarInforme() {
         if (!informesGuardados) {
             informesGuardados = [];
         } else {
-            // Si hay informes guardados, convertir la cadena a un array
+        
             informesGuardados = informesGuardados.split(';');
         }
 
-        // Validar si el nuevo registro ya existe
+    
         if (informesGuardados.includes(nuevoRegistro)) {
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."
             mensajeAmarillo.classList.remove("display-none")
             mensajeVerde.classList.add("display-none")
 
         } else {
-            // Agregar el nuevo registro al array
+        
             informesGuardados.push(nuevoRegistro);
 
-            // Actualizar el valor en LocalStorage
             localStorage.setItem('INFORMES', informesGuardados.join(';'));
 
-            // Mostrar mensaje VERDE de operación exitosa
             mensajeAmarillo.classList.add("display-none");
             mensajeVerde.classList.remove("display-none")
         }

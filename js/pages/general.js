@@ -1,3 +1,4 @@
+//VARIABLES 
 const tipoEleccion = 2;
 const tipoRecuento = 1;
 var periodosSelect = document.getElementById("anio");
@@ -5,16 +6,15 @@ var cargosSelect = document.getElementById("cargo");
 var distritosSelect = document.getElementById("distrito");
 var seccionSelect = document.getElementById("seccion");
 var hdSeccionSelect = document.getElementById("hdSeccionProvincial");
-var mesasEscrutadas = document.getElementById('mesas-escrutadas')
-var electores = document.getElementById('electores')
-var participacion = document.getElementById('participacion')
+var mesasEscrutadas = document.getElementById('mesas-escrutadas');
+var electores = document.getElementById('electores');
+var participacion = document.getElementById('participacion');
 const mensajeVerde = document.getElementById('mensaje-usuario-verde1');
 const mensajeAmarillo = document.getElementById('mensaje-usuario-amarillo1');
 const mensajeRojo = document.getElementById('mensaje-usuario-rojo1');
-
-mensajeAmarillo.style.display = 'block'
-mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR"
-
+var valoresTotalizadosPositivos;
+mensajeAmarillo.style.display = 'block';
+mensajeAmarillo.innerHTML += " Debe seleccionar los valores a filtrar y hacer clic en el botón FILTRAR";
 
 
 
@@ -118,7 +118,6 @@ async function cargarSecciones() {
 
 //FUNCION CARGAR AÑOS
 cargarAños();
-
 //COMBO EVENTOS
 
 periodosSelect.addEventListener("change", cargarCargos);
@@ -201,6 +200,7 @@ async function filtrarDatos() {
         if (mensajeRojo.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "" || distritosSelect.value == "Distrito" || distritosSelect.value == "") {
             mensajeRojo.classList.remove("display-none")
             mensajeAmarillo.classList.add("display-none")
+            mensajeVerde.classList.add("display-none")
 
         } else {
             mensajeAmarillo.style.display = "none"
@@ -209,7 +209,8 @@ async function filtrarDatos() {
             cambiarSubtitulo()
             cambioImagen()
             cambioPorcentaje()
-            
+            agrupacionesPoliticas()
+            resumenVotos()
         }
 
 
@@ -224,7 +225,7 @@ async function filtrarDatos() {
 async function cambiarTitulo() {
     var titulo = document.getElementById("titulo")
     var anio = periodosSelect.value
-    titulo.innerText = `Elecciones ${anio} | General`
+    titulo.innerText = `Elecciones ${anio} | Generales`
 }
 
 async function cambiarSubtitulo() {
@@ -233,13 +234,52 @@ async function cambiarSubtitulo() {
     var distrito = distritosSelect.options[distritosSelect.selectedIndex].text
     var cargo = cargosSelect.options[cargosSelect.selectedIndex].text
     var seccion = seccionSelect.options[seccionSelect.selectedIndex].text
-    subtitulo.innerText = `${anio} > General > Definitivo > ${cargo} > ${distrito} > ${seccion}`
+    subtitulo.innerText = `${anio} > Generales > Definitivo > ${cargo} > ${distrito} > ${seccion}`
+}
+
+async function agrupacionesPoliticas() {
+    var i = 0
+    var contenedor = document.getElementById("contenedor-barras");
+    contenedor.innerHTML = ""
+    valoresTotalizadosPositivos.forEach(valores => {
+
+        var nombre = valores.nombreAgrupacion
+        var votosTotales = valores.votos
+        var votosPorcentaje = valores.votosPorcentaje
+        var barra = document.createElement("div")
+        porcentajeVotos = votosPorcentaje.toFixed(2)
+        barra.innerHTML = barra.innerHTML + `
+                <h3>${nombre}</h3>
+                <p>${porcentajeVotos}%</p>
+                <p>${votosTotales}</p>
+            <div class="progress" style="background: ${agrupacionesColores[i]?.colorLiviano || "grey"}; ">
+                <div class="progress-bar" style = "width:${porcentajeVotos}%; background: ${agrupacionesColores[i]?.colorPleno || "black"};" >
+                    <span class="progress-bar-text">${porcentajeVotos}%</span>
+                </div>
+            </div>`
+        contenedor.appendChild(barra)
+        i += 1
+    })
+}
+
+async function resumenVotos() {
+    cont = document.getElementById("barras")
+    cont.innerHTML = "";
+    var i = 0;
+    valoresTotalizadosPositivos.forEach(valores => {
+        if (!(i == 7)) {
+            var nombre = valores.nombreAgrupacion;
+            var votosPorcentaje = valores.votosPorcentaje;
+            cont.innerHTML = cont.innerHTML + `<div class="bar" id=${nombre} data-name="${nombre}" title="${nombre} ${votosPorcentaje}%" style="--bar-value:${votosPorcentaje}%; background-color:${agrupacionesColores[i].colorPleno};"></div>`
+            i += 1;
+
+        }
+    })
 }
 
 
 function agregarInforme() {
 
-    // Obtener los valores seleccionados por el usuario (reemplaza esto con tu lógica)
     let vAnio = periodosSelect.value;
     let vTipoRecuento = tipoRecuento;
     let vTipoEleccion = tipoEleccion;
@@ -248,17 +288,13 @@ function agregarInforme() {
     let vSeccionProvincial = hdSeccionSelect.value == "null" ? "" : hdSeccionSelect.value;
     let vSeccionID = seccionSelect.value;
 
-    
+    let nuevoRegistro = `${vAnio}| ${vTipoRecuento}| ${vTipoEleccion}| ${vCategoriaId}| ${vDistrito}| ${vSeccionProvincial}| ${vSeccionID} `;
 
-    // Construir la cadena del nuevo registro
-    let nuevoRegistro = `${vAnio}|${vTipoRecuento}|${vTipoEleccion}|${vCategoriaId}|${vDistrito}|${vSeccionProvincial}|${vSeccionID}`;
-
-    // Obtener los informes existentes desde LocalStorage
     let informesGuardados = localStorage.getItem('INFORMES');
 
 
     if (!(mensajeRojo.classList.contains("display-none") && periodosSelect.value == "Año" || cargosSelect.value == "Cargo" || seccionSelect.value == "" || distritosSelect.value == "Distrito" || distritosSelect.value == "")) {
-        // Si no hay informes guardados, inicializar como un array vacío
+
         periodosSelect.selectedIndex = 0
         cargosSelect.selectedIndex = 0
         distritosSelect.selectedIndex = 0
@@ -268,24 +304,22 @@ function agregarInforme() {
         if (!informesGuardados) {
             informesGuardados = [];
         } else {
-            // Si hay informes guardados, convertir la cadena a un array
+
             informesGuardados = informesGuardados.split(';');
         }
 
-        // Validar si el nuevo registro ya existe
+
         if (informesGuardados.includes(nuevoRegistro)) {
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."
             mensajeAmarillo.classList.remove("display-none")
             mensajeVerde.classList.add("display-none")
 
         } else {
-            // Agregar el nuevo registro al array
+
             informesGuardados.push(nuevoRegistro);
 
-            // Actualizar el valor en LocalStorage
             localStorage.setItem('INFORMES', informesGuardados.join(';'));
 
-            // Mostrar mensaje VERDE de operación exitosa
             mensajeAmarillo.classList.add("display-none");
             mensajeVerde.classList.remove("display-none")
         }
@@ -356,3 +390,16 @@ const provinciasIds = [
     '<svg height="210" width="300" id="Tierra del Fuego Antartida e Islas del Atlantico Sur"><path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1" fill-rule="evenodd" d="M166 125L160 121L154 114L139 104L136 98L129 92L122 78L120 79L114 76L114 73L118 67L120 67L121 69L121 67L113 54L113 140L114 138L118 138L120 136L132 139L141 138L161 146L163 143L172 143L173 140L177 140L180 142L185 139L185 141L188 140L188 138L190 137L189 135L192 130L181 130L170 128L167 126z"></path></svg>'
 
 ];
+
+const agrupacionesColores = {
+    0: { colorPleno: "var(--grafica-amarillo)", colorLiviano: "var(--grafica-amarillo-claro)" },
+    1: { colorPleno: "var(--grafica-celeste)", colorLiviano: "var(--grafica-celeste-claro)" },
+    2: { colorPleno: "var(--grafica-lila)", colorLiviano: "var(--grafica-lila-claro)" },
+    3: { colorPleno: "var(--grafica-bordo)", colorLiviano: "var(--grafica-bordo-claro)" },
+    4: { colorPleno: "var(--grafica-verde)", colorLiviano: "var(--grafica-verde-claro)" },
+    5: { colorPleno: "var(--grafica-anaranjado)", colorLiviano: "var(--grafica-anaranjado-claro)" },
+    6: { colorPleno: "var(--grafica-rojo)", colorLiviano: "var(--grafica-rojo-claro)" },
+    7: { colorPleno: "var(--grafica-violeta)", colorLiviano: "var(--grafica-violeta-claro)" },
+    8: { colorPleno: "var(--grafica-azul-fuerte)", colorLiviano: "var(--grafica-azul)" },
+
+}
