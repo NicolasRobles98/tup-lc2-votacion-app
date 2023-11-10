@@ -12,7 +12,7 @@
     <script src="js/pages/informes.js"></script>
 </head>
 
-<body>
+<body onload="informes()">
     <header class="header-color">
         <!--Barra de logo portal-->
         <div class="header-page">
@@ -54,7 +54,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <div>
+                        <div id="mapa">
                             <svg height="210" width="800">
                                 <path class="leaflet-interactive" stroke="#18a0fb" stroke-opacity="1" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" fill="#18a0fb" fill-opacity="1"
@@ -66,8 +66,8 @@
                     </td>
                     <td>
                         <div>
-                            <p class="texto-elecciones-chico">Elecciones<br>2020 |<br>Generales<br></p>
-                            <p class="texto-path-chico">2020 > <br>Generales > <br>Provisorio > <br>Senadores <br>Nacionales > <br>Buenos <br>Aires</p>
+                            <p id="titulo" class="texto-elecciones-chico">Elecciones<br>2020 |<br>Generales<br></p>
+                            <p id="subtitulo" class="texto-path-chico">2020 > <br>Generales > <br>Provisorio > <br>Senadores <br>Nacionales > <br>Buenos <br>Aires</p>
                         </div>
                     </td>
                     <td style="display: flex;">
@@ -117,7 +117,7 @@
                                     </path>
                                 </g>
                             </svg>
-                            <p>Mesas Escrutadas 62.71%</p>
+                            <p id="texto-mesas">Mesas Escrutadas 62.71%</p>
                         </div>
                         <div class="dato-general"
                             style="background-color: var(--magenta); border-radius: 5px; margin: 2px;">
@@ -205,7 +205,7 @@
                                                         c-0.238-0.571-0.797-0.944-1.416-0.944l0,0c-4.601,1.534-7.55-4.364-8.966-9.319c-2.595-10.027-1.18-14.864,0.473-17.105H180.521z">
                                 </path>
                             </svg>
-                            <p>Electores 62.71%</p>
+                            <p id="texto-electores">Electores 62.71%</p>
 
                         </div>
                         <div class="dato-general"
@@ -264,7 +264,7 @@
                 C184.178,409.323,186.501,406.999,189.368,406.999z"></path>
                                 <rect x="195.975" y="387.534" fill="#FFFFFF" width="69.013" height="14.393"></rect>
                             </svg>
-                            <p>Participación sobre escrutado 62.71%</p>
+                            <p id="texto-participacion">Participación sobre escrutado 62.71%</p>
 
                         </div>
                     </td>
