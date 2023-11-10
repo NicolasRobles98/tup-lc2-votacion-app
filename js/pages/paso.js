@@ -314,10 +314,7 @@ function agregarInforme() {
         } else {
         
             informesGuardados = informesGuardados.split(';');
-            console.log(informesGuardados)
         }
-        console.log(informesGuardados)
-
     
         if (informesGuardados.includes(nuevoRegistro)) {
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."

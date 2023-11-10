@@ -17,6 +17,7 @@ var info
 var mesasEscrutadas = document.getElementById("texto-mesas")
 var participacion = document.getElementById("texto-participacion")
 var electores = document.getElementById("texto-electores")
+var informesGuardados = localStorage.getItem('INFORMES');
 mensajeRojo.classList.add("display-none")
 mensajeVerde.classList.add("display-none")
 mensajeAmarillo.classList.add("display-none")
@@ -44,7 +45,7 @@ async function informes() {
             i += 1
             llamadoApi()
         });
-        // informesGuardados = informesGuardados.split(';');
+
     }
 }
 
