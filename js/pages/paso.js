@@ -321,6 +321,7 @@ function agregarInforme() {
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."
             mensajeAmarillo.classList.remove("display-none")
             mensajeVerde.classList.add("display-none")
+            mensajeRojo.classList.add("display-none")
 
         } else {
         
@@ -330,6 +331,7 @@ function agregarInforme() {
 
             mensajeAmarillo.classList.add("display-none");
             mensajeVerde.classList.remove("display-none")
+            mensajeRojo.classList.add("display-none")
         }
     } else {
         mensajeAmarillo.innerText = "Seleccione todos los valores antes de presionar el boton."
