@@ -310,7 +310,6 @@ function agregarInforme() {
 
 
         if (informesGuardados.includes(nuevoRegistro)) {
-            console.log("entre")
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."
             mensajeAmarillo.classList.remove("display-none")
             mensajeAmarillo.style.display = "block"

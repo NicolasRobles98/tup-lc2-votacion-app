@@ -320,6 +320,7 @@ function agregarInforme() {
         if (informesGuardados.includes(nuevoRegistro)) {
             mensajeAmarillo.innerText = "El informe que intento agregar ya existe."
             mensajeAmarillo.classList.remove("display-none")
+            mensajeAmarillo.style.display = "block"
             mensajeVerde.classList.add("display-none")
             mensajeRojo.classList.add("display-none")
 
